@@ -1,0 +1,57 @@
+Test
+Test
+Test
+2018-02-04 23:23:20 [@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: glpiactiveprofile
+  Backtrace :
+  inc/html.class.php:1198                            
+  inc/html.class.php:1769                            Html::includeHeader()
+  inc/config.php:229                                 Html::nullHeader()
+  inc/includes.php:57                                include_once()
+  index.php:62                                       include()
+Test
+2018-02-04 23:23:20 [@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: glpiactiveprofile
+  Backtrace :
+  inc/html.class.php:1198                            
+  inc/html.class.php:1769                            Html::includeHeader()
+  inc/config.php:229                                 Html::nullHeader()
+  inc/includes.php:57                                include_once()
+  index.php:62                                       include()
+2018-02-26 02:18:06 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/toolbox.class.php:586                          
+  inc/user.class.php:168                             Toolbox::userErrorHandlerDebug()
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-02-26 02:18:06 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/toolbox.class.php:586                          
+  inc/user.class.php:168                             Toolbox::userErrorHandlerDebug()
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-02-26 02:23:49 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-26 02:23:49 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-26 02:23:51 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2124                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()

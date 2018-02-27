@@ -1,0 +1,222 @@
+2018-02-26 02:18:52 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT COUNT(*) AS cpt FROM `glpi_items_tickets` INNER JOIN `glpi_tickets` ON (`glpi_items_tickets`.`tickets_id` = `glpi_tickets`.`id`) WHERE `itemtype` = 'Ticket' AND `items_id` = 49953 AND `is_deleted` = 0
+  Error: Column 'itemtype' in where clause is ambiguous
+  Backtrace :
+  inc/dbmysqliterator.class.php:274                  
+  inc/dbmysql.class.php:542                          DBmysqlIterator->__construct()
+  inc/dbutils.class.php:325                          DBmysql->request()
+  inc/db.function.php:202                            DbUtils->countElementsInTable()
+  inc/ticket.class.php:754                           countElementsInTable()
+  inc/commonglpi.class.php:206                       Ticket->getTabNameForItem()
+  inc/ticket.class.php:898                           CommonGLPI->addStandardTab()
+  inc/commonglpi.class.php:161                       Ticket->defineTabs()
+  inc/commonglpi.class.php:706                       CommonGLPI->defineAllTabs()
+  inc/commonglpi.class.php:999                       CommonGLPI->showTabsContent()
+  front/ticket.form.php:220                          CommonGLPI->display()
+2018-02-26 02:18:53 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT COUNT(*) AS cpt FROM `glpi_items_tickets` INNER JOIN `glpi_tickets` ON (`glpi_items_tickets`.`tickets_id` = `glpi_tickets`.`id`) WHERE `itemtype` = 'Ticket' AND `items_id` = 49953 AND `is_deleted` = 0
+  Error: Column 'itemtype' in where clause is ambiguous
+  Backtrace :
+  inc/dbmysqliterator.class.php:274                  
+  inc/dbmysql.class.php:542                          DBmysqlIterator->__construct()
+  inc/dbutils.class.php:325                          DBmysql->request()
+  inc/db.function.php:202                            DbUtils->countElementsInTable()
+  inc/ticket.class.php:754                           countElementsInTable()
+  inc/commonglpi.class.php:206                       Ticket->getTabNameForItem()
+  inc/ticket.class.php:898                           CommonGLPI->addStandardTab()
+  inc/commonglpi.class.php:161                       Ticket->defineTabs()
+  ajax/updatecurrenttab.php:50                       CommonGLPI->defineAllTabs()
+2018-02-26 02:18:53 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT *
+                FROM `glpi_slas` WHERE `type` = '1' AND  ( `entities_id` = '0'  ) 
+  Error: Unknown column 'type' in 'where clause'
+  Backtrace :
+  inc/commondbtm.class.php:331                       
+  inc/levelagreement.class.php:331                   CommonDBTM->find()
+  inc/ticket.class.php:4685                          LevelAgreement->showForTicket()
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-26 02:18:53 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT *
+                FROM `glpi_slas` WHERE `type` = '0' AND  ( `entities_id` = '0'  ) 
+  Error: Unknown column 'type' in 'where clause'
+  Backtrace :
+  inc/commondbtm.class.php:331                       
+  inc/levelagreement.class.php:331                   CommonDBTM->find()
+  inc/ticket.class.php:4696                          LevelAgreement->showForTicket()
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-26 02:24:27 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT COUNT(*) AS cpt FROM `glpi_items_tickets` INNER JOIN `glpi_tickets` ON (`glpi_items_tickets`.`tickets_id` = `glpi_tickets`.`id`) WHERE `itemtype` = 'Ticket' AND `items_id` = 50009 AND `is_deleted` = 0
+  Error: Column 'itemtype' in where clause is ambiguous
+  Backtrace :
+  inc/dbmysqliterator.class.php:274                  
+  inc/dbmysql.class.php:542                          DBmysqlIterator->__construct()
+  inc/dbutils.class.php:325                          DBmysql->request()
+  inc/db.function.php:202                            DbUtils->countElementsInTable()
+  inc/ticket.class.php:754                           countElementsInTable()
+  inc/commonglpi.class.php:206                       Ticket->getTabNameForItem()
+  inc/ticket.class.php:898                           CommonGLPI->addStandardTab()
+  inc/commonglpi.class.php:161                       Ticket->defineTabs()
+  inc/commonglpi.class.php:706                       CommonGLPI->defineAllTabs()
+  inc/commonglpi.class.php:999                       CommonGLPI->showTabsContent()
+  front/ticket.form.php:220                          CommonGLPI->display()
+2018-02-26 02:24:28 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT COUNT(*) AS cpt FROM `glpi_items_tickets` INNER JOIN `glpi_tickets` ON (`glpi_items_tickets`.`tickets_id` = `glpi_tickets`.`id`) WHERE `itemtype` = 'Ticket' AND `items_id` = 50009 AND `is_deleted` = 0
+  Error: Column 'itemtype' in where clause is ambiguous
+  Backtrace :
+  inc/dbmysqliterator.class.php:274                  
+  inc/dbmysql.class.php:542                          DBmysqlIterator->__construct()
+  inc/dbutils.class.php:325                          DBmysql->request()
+  inc/db.function.php:202                            DbUtils->countElementsInTable()
+  inc/ticket.class.php:754                           countElementsInTable()
+  inc/commonglpi.class.php:206                       Ticket->getTabNameForItem()
+  inc/ticket.class.php:898                           CommonGLPI->addStandardTab()
+  inc/commonglpi.class.php:161                       Ticket->defineTabs()
+  ajax/updatecurrenttab.php:50                       CommonGLPI->defineAllTabs()
+2018-02-26 02:24:28 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT *
+                FROM `glpi_slas` WHERE `type` = '1' AND  ( `entities_id` = '0'  ) 
+  Error: Unknown column 'type' in 'where clause'
+  Backtrace :
+  inc/commondbtm.class.php:331                       
+  inc/levelagreement.class.php:331                   CommonDBTM->find()
+  inc/ticket.class.php:4685                          LevelAgreement->showForTicket()
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-26 02:24:28 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT *
+                FROM `glpi_slas` WHERE `type` = '0' AND  ( `entities_id` = '0'  ) 
+  Error: Unknown column 'type' in 'where clause'
+  Backtrace :
+  inc/commondbtm.class.php:331                       
+  inc/levelagreement.class.php:331                   CommonDBTM->find()
+  inc/ticket.class.php:4696                          LevelAgreement->showForTicket()
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-26 02:25:44 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT COUNT(*) AS cpt FROM `glpi_items_tickets` INNER JOIN `glpi_tickets` ON (`glpi_items_tickets`.`tickets_id` = `glpi_tickets`.`id`) WHERE `itemtype` = 'Ticket' AND `items_id` = 49997 AND `is_deleted` = 0
+  Error: Column 'itemtype' in where clause is ambiguous
+  Backtrace :
+  inc/dbmysqliterator.class.php:274                  
+  inc/dbmysql.class.php:542                          DBmysqlIterator->__construct()
+  inc/dbutils.class.php:325                          DBmysql->request()
+  inc/db.function.php:202                            DbUtils->countElementsInTable()
+  inc/ticket.class.php:754                           countElementsInTable()
+  inc/commonglpi.class.php:206                       Ticket->getTabNameForItem()
+  inc/ticket.class.php:898                           CommonGLPI->addStandardTab()
+  inc/commonglpi.class.php:161                       Ticket->defineTabs()
+  inc/commonglpi.class.php:706                       CommonGLPI->defineAllTabs()
+  inc/commonglpi.class.php:999                       CommonGLPI->showTabsContent()
+  front/ticket.form.php:220                          CommonGLPI->display()
+2018-02-26 02:25:44 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT COUNT(*) AS cpt FROM `glpi_items_tickets` INNER JOIN `glpi_tickets` ON (`glpi_items_tickets`.`tickets_id` = `glpi_tickets`.`id`) WHERE `itemtype` = 'Ticket' AND `items_id` = 49997 AND `is_deleted` = 0
+  Error: Column 'itemtype' in where clause is ambiguous
+  Backtrace :
+  inc/dbmysqliterator.class.php:274                  
+  inc/dbmysql.class.php:542                          DBmysqlIterator->__construct()
+  inc/dbutils.class.php:325                          DBmysql->request()
+  inc/db.function.php:202                            DbUtils->countElementsInTable()
+  inc/ticket.class.php:754                           countElementsInTable()
+  inc/commonglpi.class.php:206                       Ticket->getTabNameForItem()
+  inc/ticket.class.php:898                           CommonGLPI->addStandardTab()
+  inc/commonglpi.class.php:161                       Ticket->defineTabs()
+  ajax/updatecurrenttab.php:50                       CommonGLPI->defineAllTabs()
+2018-02-26 02:25:44 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT *
+                FROM `glpi_slas` WHERE `type` = '1' AND  ( `entities_id` = '0'  ) 
+  Error: Unknown column 'type' in 'where clause'
+  Backtrace :
+  inc/commondbtm.class.php:331                       
+  inc/levelagreement.class.php:331                   CommonDBTM->find()
+  inc/ticket.class.php:4685                          LevelAgreement->showForTicket()
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-26 02:25:44 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT *
+                FROM `glpi_slas` WHERE `type` = '0' AND  ( `entities_id` = '0'  ) 
+  Error: Unknown column 'type' in 'where clause'
+  Backtrace :
+  inc/commondbtm.class.php:331                       
+  inc/levelagreement.class.php:331                   CommonDBTM->find()
+  inc/ticket.class.php:4696                          LevelAgreement->showForTicket()
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-26 02:27:38 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT COUNT(*) AS cpt FROM `glpi_items_tickets` INNER JOIN `glpi_tickets` ON (`glpi_items_tickets`.`tickets_id` = `glpi_tickets`.`id`) WHERE `itemtype` = 'Ticket' AND `items_id` = 47789 AND `is_deleted` = 0
+  Error: Column 'itemtype' in where clause is ambiguous
+  Backtrace :
+  inc/dbmysqliterator.class.php:274                  
+  inc/dbmysql.class.php:542                          DBmysqlIterator->__construct()
+  inc/dbutils.class.php:325                          DBmysql->request()
+  inc/db.function.php:202                            DbUtils->countElementsInTable()
+  inc/ticket.class.php:754                           countElementsInTable()
+  inc/commonglpi.class.php:206                       Ticket->getTabNameForItem()
+  inc/ticket.class.php:898                           CommonGLPI->addStandardTab()
+  inc/commonglpi.class.php:161                       Ticket->defineTabs()
+  inc/commonglpi.class.php:706                       CommonGLPI->defineAllTabs()
+  inc/commonglpi.class.php:999                       CommonGLPI->showTabsContent()
+  front/ticket.form.php:220                          CommonGLPI->display()
+2018-02-26 02:27:38 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT *
+                FROM `glpi_slas` WHERE `type` = '1' AND  ( `entities_id` = '0'  ) 
+  Error: Unknown column 'type' in 'where clause'
+  Backtrace :
+  inc/commondbtm.class.php:331                       
+  inc/levelagreement.class.php:331                   CommonDBTM->find()
+  inc/ticket.class.php:4685                          LevelAgreement->showForTicket()
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-26 02:27:38 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT *
+                FROM `glpi_slas` WHERE `type` = '0' AND  ( `entities_id` = '0'  ) 
+  Error: Unknown column 'type' in 'where clause'
+  Backtrace :
+  inc/commondbtm.class.php:331                       
+  inc/levelagreement.class.php:331                   CommonDBTM->find()
+  inc/ticket.class.php:4696                          LevelAgreement->showForTicket()
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-26 02:27:38 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT COUNT(*) AS cpt FROM `glpi_items_tickets` INNER JOIN `glpi_tickets` ON (`glpi_items_tickets`.`tickets_id` = `glpi_tickets`.`id`) WHERE `itemtype` = 'Ticket' AND `items_id` = 47789 AND `is_deleted` = 0
+  Error: Column 'itemtype' in where clause is ambiguous
+  Backtrace :
+  inc/dbmysqliterator.class.php:274                  
+  inc/dbmysql.class.php:542                          DBmysqlIterator->__construct()
+  inc/dbutils.class.php:325                          DBmysql->request()
+  inc/db.function.php:202                            DbUtils->countElementsInTable()
+  inc/ticket.class.php:754                           countElementsInTable()
+  inc/commonglpi.class.php:206                       Ticket->getTabNameForItem()
+  inc/ticket.class.php:898                           CommonGLPI->addStandardTab()
+  inc/commonglpi.class.php:161                       Ticket->defineTabs()
+  ajax/updatecurrenttab.php:50                       CommonGLPI->defineAllTabs()
+2018-02-26 02:28:01 [271@dercane-Inspiron-5458]
+  *** MySQL query error:
+  SQL: SELECT COUNT(*) AS cpt FROM `glpi_items_tickets` INNER JOIN `glpi_tickets` ON (`glpi_items_tickets`.`tickets_id` = `glpi_tickets`.`id`) WHERE `itemtype` = 'Ticket' AND `items_id` = 47789 AND `is_deleted` = 0
+  Error: Column 'itemtype' in where clause is ambiguous
+  Backtrace :
+  inc/dbmysqliterator.class.php:274                  
+  inc/dbmysql.class.php:542                          DBmysqlIterator->__construct()
+  inc/dbutils.class.php:325                          DBmysql->request()
+  inc/db.function.php:202                            DbUtils->countElementsInTable()
+  inc/ticket.class.php:754                           countElementsInTable()
+  inc/commonglpi.class.php:206                       Ticket->getTabNameForItem()
+  inc/ticket.class.php:898                           CommonGLPI->addStandardTab()
+  inc/commonglpi.class.php:161                       Ticket->defineTabs()
+  ajax/updatecurrenttab.php:50                       CommonGLPI->defineAllTabs()
