@@ -55,3 +55,2411 @@ Test
   inc/config.class.php:2124                          Config->showFormUserPrefs()
   inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
   ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:05:55 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:05:55 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:05:56 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2124                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:05 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:05 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:05 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:05 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:05 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:05 [271@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:46 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:46 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:46 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:46 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:46 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:06:46 [271@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+Test
+2018-02-27 01:09:26 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:09:26 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:09:26 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:09:26 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:09:26 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:09:26 [271@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-02-27 01:09:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2139                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+Test
+2018-02-27 01:17:47 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2139                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-01 01:28:19 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-01 01:28:19 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-01 01:28:21 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2124                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-01 01:28:25 [@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: glpiactiveprofile
+  Backtrace :
+  inc/html.class.php:1198                            
+  inc/html.class.php:1769                            Html::includeHeader()
+  front/login.php:83                                 Html::nullHeader()
+2018-03-01 01:28:32 [@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: glpiactiveprofile
+  Backtrace :
+  inc/html.class.php:1198                            
+  inc/html.class.php:1599                            Html::includeHeader()
+  front/lostpassword.php:48                          Html::simpleHeader()
+2018-03-01 01:28:34 [@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: glpiactiveprofile
+  Backtrace :
+  inc/html.class.php:1198                            
+  inc/html.class.php:1599                            Html::includeHeader()
+  front/lostpassword.php:48                          Html::simpleHeader()
+2018-03-01 01:28:36 [@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: glpiactiveprofile
+  Backtrace :
+  inc/html.class.php:1198                            
+  inc/html.class.php:1599                            Html::includeHeader()
+  front/lostpassword.php:48                          Html::simpleHeader()
+2018-03-01 01:42:25 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-01 01:42:25 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-03 19:06:41 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-03 19:06:41 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-03 19:06:41 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-03 19:06:41 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-03 19:06:41 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-03 19:06:41 [271@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-05 21:59:00 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-05 21:59:00 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-05 21:59:00 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-05 21:59:00 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-05 21:59:00 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-05 21:59:00 [271@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-05 23:48:03 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-05 23:48:03 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-05 23:48:06 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2124                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-05 23:50:03 [271@dercane-Inspiron-5458]
+  *** PHP Warning(2): asort() expects parameter 1 to be array, null given
+  Backtrace :
+  :                                                  
+  inc/fieldunicity.class.php:176                     asort()
+  inc/fieldunicity.class.php:139                     FieldUnicity->showItemtype()
+  inc/commondropdown.class.php:389                   FieldUnicity->displaySpecificTypeField()
+  inc/commonglpi.class.php:472                       CommonDropdown->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-05 23:50:03 [271@dercane-Inspiron-5458]
+  *** PHP Catchable Fatal Error(4096): Argument 2 passed to Dropdown::showFromArray() must be of the type array, null given, called in /var/www/glpi/inc/fieldunicity.class.php on line 177 and defined
+  Backtrace :
+  inc/dropdown.class.php:1788                        
+  inc/fieldunicity.class.php:177                     Dropdown::showFromArray()
+  inc/fieldunicity.class.php:139                     FieldUnicity->showItemtype()
+  inc/commondropdown.class.php:389                   FieldUnicity->displaySpecificTypeField()
+  inc/commonglpi.class.php:472                       CommonDropdown->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 00:22:44 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5013                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 00:40:19 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 00:40:19 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:22:26 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:22:26 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:23:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:23:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:24:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:24:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:20 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:20 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:20 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:20 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:20 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:20 [271@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:27 [271@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-06 23:56:29 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2139                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+Test
+2018-03-07 00:03:37 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:03:37 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:03:37 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:03:37 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:03:37 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:03:37 [271@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:03:38 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2139                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+Test
+2018-03-07 00:03:57 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:03:57 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:03:58 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2124                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:04:15 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:04:15 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:04:16 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2124                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:14:20 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:14:20 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2123                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:14:20 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2124                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:14:46 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-07 00:14:46 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-07 00:51:44 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 00:51:44 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 01:06:54 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: id
+  Backtrace :
+  plugins/fields/inc/dropdown.class.php:85           
+  plugins/fields/inc/field.class.php:98              PluginFieldsDropdown::create()
+  inc/commondbtm.class.php:891                       PluginFieldsField->prepareInputForAdd()
+  plugins/fields/front/field.form.php:14             CommonDBTM->add()
+2018-03-07 01:23:12 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 01:23:12 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 01:40:51 [2@dercane-Inspiron-5458]
+  *** PHP Warning(2): Missing argument 1 for Migration::__construct(), called in /var/www/glpi/files/_plugins/fields/inc/ticketnuevo.class.php on line 55 and defined
+  Backtrace :
+  inc/migration.class.php:73                         
+  files/_plugins/fields/inc/ticketnuevo.class.php:55 Migration->__construct()
+  plugins/fields/inc/field.class.php:146             PluginFieldsTicketnuevo::removeField()
+  inc/commondbtm.class.php:1450                      PluginFieldsField->pre_deleteItem()
+  plugins/fields/front/field.form.php:22             CommonDBTM->delete()
+2018-03-07 01:40:51 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: ver
+  Backtrace :
+  inc/migration.class.php:76                         
+  files/_plugins/fields/inc/ticketnuevo.class.php:55 Migration->__construct()
+  plugins/fields/inc/field.class.php:146             PluginFieldsTicketnuevo::removeField()
+  inc/commondbtm.class.php:1450                      PluginFieldsField->pre_deleteItem()
+  plugins/fields/front/field.form.php:22             CommonDBTM->delete()
+2018-03-07 01:41:00 [2@dercane-Inspiron-5458]
+  *** PHP Warning(2): Missing argument 1 for Migration::__construct(), called in /var/www/glpi/files/_plugins/fields/inc/ticketnuevo.class.php on line 55 and defined
+  Backtrace :
+  inc/migration.class.php:73                         
+  files/_plugins/fields/inc/ticketnuevo.class.php:55 Migration->__construct()
+  plugins/fields/inc/field.class.php:146             PluginFieldsTicketnuevo::removeField()
+  inc/commondbtm.class.php:1450                      PluginFieldsField->pre_deleteItem()
+  plugins/fields/front/field.form.php:22             CommonDBTM->delete()
+2018-03-07 01:41:00 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: ver
+  Backtrace :
+  inc/migration.class.php:76                         
+  files/_plugins/fields/inc/ticketnuevo.class.php:55 Migration->__construct()
+  plugins/fields/inc/field.class.php:146             PluginFieldsTicketnuevo::removeField()
+  inc/commondbtm.class.php:1450                      PluginFieldsField->pre_deleteItem()
+  plugins/fields/front/field.form.php:22             CommonDBTM->delete()
+2018-03-07 01:43:24 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: id
+  Backtrace :
+  plugins/fields/inc/dropdown.class.php:85           
+  plugins/fields/inc/field.class.php:98              PluginFieldsDropdown::create()
+  inc/commondbtm.class.php:891                       PluginFieldsField->prepareInputForAdd()
+  plugins/fields/front/field.form.php:14             CommonDBTM->add()
+2018-03-07 01:45:46 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: id
+  Backtrace :
+  plugins/fields/inc/dropdown.class.php:85           
+  plugins/fields/inc/field.class.php:98              PluginFieldsDropdown::create()
+  inc/commondbtm.class.php:891                       PluginFieldsField->prepareInputForAdd()
+  plugins/fields/front/field.form.php:14             CommonDBTM->add()
+2018-03-07 01:48:05 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: id
+  Backtrace :
+  plugins/fields/inc/dropdown.class.php:85           
+  plugins/fields/inc/field.class.php:98              PluginFieldsDropdown::create()
+  inc/commondbtm.class.php:891                       PluginFieldsField->prepareInputForAdd()
+  plugins/fields/front/field.form.php:14             CommonDBTM->add()
+2018-03-07 01:55:29 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 01:55:29 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 01:57:32 [2@dercane-Inspiron-5458]
+  *** PHP Warning(2): Missing argument 1 for Migration::__construct(), called in /var/www/glpi/files/_plugins/fields/inc/ticketsistema.class.php on line 55 and defined
+  Backtrace :
+  inc/migration.class.php:73                         
+  .../_plugins/fields/inc/ticketsistema.class.php:55 Migration->__construct()
+  plugins/fields/inc/field.class.php:146             PluginFieldsTicketsistema::removeField()
+  inc/commondbtm.class.php:1450                      PluginFieldsField->pre_deleteItem()
+  plugins/fields/front/field.form.php:22             CommonDBTM->delete()
+2018-03-07 01:57:32 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: ver
+  Backtrace :
+  inc/migration.class.php:76                         
+  .../_plugins/fields/inc/ticketsistema.class.php:55 Migration->__construct()
+  plugins/fields/inc/field.class.php:146             PluginFieldsTicketsistema::removeField()
+  inc/commondbtm.class.php:1450                      PluginFieldsField->pre_deleteItem()
+  plugins/fields/front/field.form.php:22             CommonDBTM->delete()
+2018-03-07 01:59:00 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: id
+  Backtrace :
+  plugins/fields/inc/dropdown.class.php:85           
+  plugins/fields/inc/field.class.php:98              PluginFieldsDropdown::create()
+  inc/commondbtm.class.php:891                       PluginFieldsField->prepareInputForAdd()
+  plugins/fields/front/field.form.php:14             CommonDBTM->add()
+2018-03-07 02:00:25 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:00:25 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:00:50 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:00:50 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:01:09 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:01:09 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:03:51 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:03:51 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:04:48 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:04:48 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:18:58 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:18:58 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:18:58 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:18:58 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:18:58 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:18:58 [2@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:19:22 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:19:22 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:19:22 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:19:22 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:19:22 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:19:22 [2@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:19:23 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2139                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+Test
+2018-03-07 02:37:46 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:37:46 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:39:28 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:39:28 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:48:16 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:48:16 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:49:22 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:49:22 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:49:46 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:49:46 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:50:18 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:50:18 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:50:27 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:50:27 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:52:54 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:52:54 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:55:09 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:55:09 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:56:58 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 02:56:58 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 03:06:38 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 03:06:38 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 03:17:31 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 03:17:31 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 03:21:58 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 03:21:58 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 03:24:23 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 03:24:23 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 03:25:00 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 03:25:00 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:21:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:21:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:21:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:21:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:21:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:21:35 [2@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:21:39 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2139                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+Test
+2018-03-07 14:22:03 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:22:03 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:22:03 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:22:03 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:22:03 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:22:03 [2@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 14:22:04 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2139                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+Test
+2018-03-07 21:38:07 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:38:07 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:38:50 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:38:50 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:39:27 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:39:27 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:40:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:40:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:48:20 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:48:20 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:49:17 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:49:17 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:56:41 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-07 21:56:42 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-07 21:56:43 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-07 21:56:44 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-07 21:56:45 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-07 21:56:49 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 21:56:49 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:01:02 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:01:02 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:01:06 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:01:06 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:01:29 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:01:29 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:01:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:01:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:01:39 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:01:39 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:04:34 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:405                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:04:34 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:407                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:04:34 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_lockprofile_id
+  Backtrace :
+  inc/config.class.php:412                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:04:34 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_item_list
+  Backtrace :
+  inc/config.class.php:420                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:04:34 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:423                           
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:04:34 [2@dercane-Inspiron-5458]
+  *** PHP Warning(2): Invalid argument supplied for foreach()
+  Backtrace :
+  inc/dropdown.class.php:1848                        
+  inc/config.class.php:423                           Dropdown::showFromArray()
+  inc/config.class.php:2135                          Config->showFormDisplay()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:04:34 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2139                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+Test
+2018-03-07 22:04:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:04:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:18:14 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-07 22:18:14 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-07 22:27:07 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:27:07 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:31:47 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:31:47 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:34:36 [@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: glpiactiveprofile
+  Backtrace :
+  inc/html.class.php:1198                            
+  inc/html.class.php:1769                            Html::includeHeader()
+  front/login.php:83                                 Html::nullHeader()
+2018-03-07 22:34:43 [@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: glpiactiveprofile
+  Backtrace :
+  inc/html.class.php:1198                            
+  inc/html.class.php:1769                            Html::includeHeader()
+  front/login.php:83                                 Html::nullHeader()
+2018-03-07 22:34:57 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-07 22:34:57 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-07 22:35:10 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:35:10 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:38:33 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:38:33 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:38:43 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:38:43 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:38:49 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-07 22:39:04 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:39:04 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:39:30 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:39:30 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:39:45 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-07 22:40:03 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:40:03 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:40:19 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-07 22:40:20 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-07 22:40:49 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-07 22:41:34 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-07 22:41:45 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:41:45 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:49:57 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2129                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:49:57 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/config.class.php:2129                          User->computePreferences()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-07 22:49:57 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/config.class.php:1341                          
+  inc/config.class.php:2130                          Config->showFormUserPrefs()
+  inc/commonglpi.class.php:482                       Config::displayTabContentForItem()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 00:01:36 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 00:01:36 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 00:01:44 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 00:01:44 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 00:18:03 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-08 00:55:45 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-08 00:56:00 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 00:56:00 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 00:57:53 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 00:57:53 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:02:15 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-08 01:02:16 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-08 01:02:21 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-08 01:02:24 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-08 01:03:20 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-08 01:03:24 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-08 01:03:38 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:03:38 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:06:20 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:06:20 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:06:36 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:06:36 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:06:43 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-08 01:06:47 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-08 01:07:09 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:07:09 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:07:24 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-08 01:07:24 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-08 01:07:29 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:07:29 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:07:58 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-08 01:08:21 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-08 01:08:21 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 18:47:57 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 18:47:57 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:23:06 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:23:06 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:24:12 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-09 19:24:42 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:24:42 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:24:55 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-09 19:26:16 [@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: glpiactiveprofile
+  Backtrace :
+  inc/html.class.php:1198                            
+  inc/html.class.php:1769                            Html::includeHeader()
+  front/login.php:83                                 Html::nullHeader()
+2018-03-09 19:26:44 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-09 19:26:44 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-09 19:26:54 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:26:54 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:27:01 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-09 19:30:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-09 19:30:27 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-09 19:31:30 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:31:30 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:31:36 [271@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-09 19:32:14 [@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: glpiactiveprofile
+  Backtrace :
+  inc/html.class.php:1198                            
+  inc/html.class.php:1769                            Html::includeHeader()
+  front/login.php:83                                 Html::nullHeader()
+2018-03-09 19:35:31 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_autolock_mode
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-09 19:35:31 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_directunlock_notification
+  Backtrace :
+  inc/user.class.php:168                             
+  inc/session.class.php:124                          User->computePreferences()
+  inc/auth.class.php:813                             Session::init()
+  front/login.php:79                                 Auth->Login()
+2018-03-09 19:37:51 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:37:51 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:38:16 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:38:16 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:38:43 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined index: lock_use_lock_item
+  Backtrace :
+  inc/objectlock.class.php:353                       
+  inc/objectlock.class.php:376                       ObjectLock->getLockedObjectInfo()
+  ajax/timeline.php:72                               ObjectLock::isLocked()
+2018-03-09 19:38:49 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:38:49 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:48:27 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:48:27 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:52:19 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:52:19 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:52:33 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:52:33 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:53:21 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:53:21 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:56:53 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:56:53 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:58:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:58:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:59:01 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 19:59:01 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:19:03 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:19:03 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:19:43 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:19:43 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:22:48 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:22:48 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:23:48 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:23:48 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:24:18 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:24:18 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:24:25 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:24:25 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:24:49 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:24:49 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:25:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:25:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  inc/commonglpi.class.php:449                       CommonGLPI::displayStandardTab()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:25:58 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:25:58 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:26:24 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:26:24 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:26:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:26:35 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:26:46 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:26:46 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:26:52 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:26:52 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:27:46 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:27:46 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:28:19 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-09 20:28:19 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-12 22:42:33 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-12 22:42:33 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-12 22:44:22 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-12 22:44:22 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-12 23:07:40 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-12 23:07:40 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-12 23:08:00 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-12 23:08:00 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-12 23:08:16 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-12 23:08:16 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-14 06:13:20 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idurgency
+  Backtrace :
+  inc/ticket.class.php:5014                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()
+2018-03-14 06:13:20 [2@dercane-Inspiron-5458]
+  *** PHP Notice(8): Undefined variable: idimpact
+  Backtrace :
+  inc/ticket.class.php:5015                          
+  inc/commonglpi.class.php:472                       Ticket->showForm()
+  ajax/common.tabs.php:96                            CommonGLPI::displayStandardTab()

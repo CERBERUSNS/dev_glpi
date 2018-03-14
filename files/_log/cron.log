@@ -22,3 +22,191 @@ Interno #1: Ejecutar reservation
 Interno #1: Ejecutar closeticket
 2018-02-27 00:53:47 [271@dercane-Inspiron-5458]
 Interno #1: Ejecutar infocom
+2018-02-27 01:02:20 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar session
+2018-02-27 01:18:37 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar createinquest
+2018-02-27 01:31:44 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar contract
+2018-02-27 02:01:34 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar logs
+2018-02-27 21:30:03 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-02-28 11:43:47 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar queuednotification
+2018-03-01 01:28:07 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar queuednotificationclean
+2018-03-01 01:28:23 [@dercane-Inspiron-5458]
+Interno #1: Ejecutar temp
+2018-03-03 19:12:21 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar reservation
+2018-03-04 08:49:11 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar mailgateerror
+2018-03-05 00:55:27 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar certificate
+2018-03-05 11:20:30 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar closeticket
+2018-03-05 21:58:59 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-05 22:16:03 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar infocom
+2018-03-05 22:30:00 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar session
+2018-03-05 23:39:51 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar createinquest
+2018-03-05 23:47:51 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar contract
+2018-03-06 00:22:33 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar logs
+2018-03-06 00:40:19 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar queuednotification
+2018-03-06 23:20:53 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar temp
+2018-03-06 23:27:55 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar queuednotificationclean
+2018-03-06 23:33:00 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar reservation
+2018-03-06 23:38:05 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar mailgateerror
+2018-03-06 23:43:10 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-06 23:49:18 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar closeticket
+2018-03-06 23:55:44 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar queuednotification
+2018-03-07 00:01:18 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar certificate
+2018-03-07 00:14:19 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar infocom
+2018-03-07 00:14:22 [@dercane-Inspiron-5458]
+Interno #1: Ejecutar session
+2018-03-07 00:51:03 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar createinquest
+2018-03-07 01:06:55 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar contract
+2018-03-07 01:23:12 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 01:39:39 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar queuednotification
+2018-03-07 01:44:41 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar temp
+2018-03-07 01:54:51 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar logs
+2018-03-07 01:59:53 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar reservation
+2018-03-07 02:14:17 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 02:33:22 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar queuednotification
+2018-03-07 02:35:29 [2@dercane-Inspiron-5458]
+Error en el envío del correo<br/>SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-07 02:37:36 [2@dercane-Inspiron-5458]
+Error en el envío del correo<br/>SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-07 02:39:27 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 02:48:16 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 02:55:09 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar temp
+2018-03-07 03:06:38 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 03:17:24 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar reservation
+2018-03-07 03:24:23 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 14:21:35 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 21:36:20 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar temp
+2018-03-07 21:48:20 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar reservation
+2018-03-07 21:54:38 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar closeticket
+2018-03-07 22:00:54 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 22:06:14 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 22:17:37 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 22:18:09 [@dercane-Inspiron-5458]
+Interno #1: Nada que ejecutar
+2018-03-07 22:26:37 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 22:31:43 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 22:34:30 [@dercane-Inspiron-5458]
+Interno #1: Nada que ejecutar
+2018-03-07 22:34:39 [@dercane-Inspiron-5458]
+Interno #1: Nada que ejecutar
+2018-03-07 22:34:49 [@dercane-Inspiron-5458]
+Interno #1: Nada que ejecutar
+2018-03-07 22:40:03 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-07 22:49:18 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar temp
+2018-03-07 22:56:11 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-08 00:01:28 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar reservation
+2018-03-08 00:08:53 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-08 00:16:26 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar queuednotificationclean
+2018-03-08 00:28:36 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar mailgateerror
+2018-03-08 00:55:54 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar temp
+2018-03-08 01:03:04 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar certificate
+2018-03-08 01:07:19 [@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-09 18:47:53 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar infocom
+2018-03-09 19:23:06 [271@dercane-Inspiron-5458]
+Interno #1: Ejecutar session
+2018-03-09 19:26:09 [@dercane-Inspiron-5458]
+Interno #1: Ejecutar createinquest
+2018-03-09 19:26:27 [@dercane-Inspiron-5458]
+Interno #1: Ejecutar reservation
+2018-03-09 19:30:24 [@dercane-Inspiron-5458]
+Interno #1: Ejecutar contract
+2018-03-09 19:32:02 [@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-09 19:42:20 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar logs
+2018-03-09 19:47:25 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar temp
+2018-03-09 19:52:29 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar closeticket
+2018-03-09 19:57:36 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar queuednotificationclean
+2018-03-09 20:03:53 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar mailgateerror
+2018-03-09 20:17:45 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar certificate
+2018-03-09 20:22:48 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-09 20:28:01 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar reservation
+2018-03-09 23:08:46 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-10 09:34:06 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar temp
+2018-03-10 22:51:06 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar reservation
+2018-03-11 10:21:35 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar planningrecall
+2018-03-12 22:34:53 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar closeticket
+2018-03-12 22:41:54 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar temp
+2018-03-12 22:49:47 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar infocom
+2018-03-12 22:55:05 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar session
+2018-03-12 23:00:22 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar createinquest
+2018-03-12 23:05:37 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar contract
+2018-03-14 06:13:21 [2@dercane-Inspiron-5458]
+Interno #1: Ejecutar logs

@@ -4874,7 +4874,7 @@ class Ticket extends CommonITILObject {
       echo "</td>";
       echo "</tr>";
 
-      echo "<tr class='tab_bg_1'>";
+      /*echo "<tr class='tab_bg_1'>";
       echo "<th>".$tt->getBeginHiddenFieldText('urgency');
       printf(__('%1$s%2$s'), __('Urgency'), $tt->getMandatoryMark('urgency'));
       echo $tt->getEndHiddenFieldText('urgency')."</th>";
@@ -4893,7 +4893,9 @@ class Ticket extends CommonITILObject {
          echo parent::getUrgencyName($this->fields["urgency"]);
          echo $tt->getEndHiddenFieldValue('urgency', $this);
       }
+
       echo "</td>";
+      */
       // Display validation state
       echo "<th>";
       if (!$ID) {
@@ -4950,6 +4952,7 @@ class Ticket extends CommonITILObject {
       }
       echo "</td></tr>";
 
+      /*
       echo "<tr class='tab_bg_1'>";
       echo "<th>".$tt->getBeginHiddenFieldText('impact');
       printf(__('%1$s%2$s'), __('Impact'), $tt->getMandatoryMark('impact'));
@@ -4966,7 +4969,7 @@ class Ticket extends CommonITILObject {
       }
       echo $tt->getEndHiddenFieldValue('impact', $this);
       echo "</td>";
-
+    */
       echo "<th>".$tt->getBeginHiddenFieldText('locations_id');
       printf(__('%1$s%2$s'), __('Location'), $tt->getMandatoryMark('locations_id'));
       echo $tt->getEndHiddenFieldText('locations_id')."</th>";

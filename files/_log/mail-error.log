@@ -1,0 +1,24 @@
+2018-03-07 02:03:51 [2@dercane-Inspiron-5458]
+Warning: an email was undeliverable to mbascope@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-07 02:35:29 [2@dercane-Inspiron-5458]
+Warning: an email was undeliverable to mbascope@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-07 02:37:36 [2@dercane-Inspiron-5458]
+Warning: an email was undeliverable to isinani@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-07 02:48:16 [2@dercane-Inspiron-5458]
+Warning: an email was undeliverable to mbascope@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-07 02:55:09 [2@dercane-Inspiron-5458]
+Warning: an email was undeliverable to mbascope@redenlace.com.bo with 2 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-07 03:19:55 [2@dercane-Inspiron-5458]
+Warning: an email was undeliverable to mbascope@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-07 03:24:22 [2@dercane-Inspiron-5458]
+Warning: an email was undeliverable to mbascope@redenlace.com.bo with 0 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-07 03:24:22 [2@dercane-Inspiron-5458]
+Fatal error: giving up delivery of email to mbascope@redenlace.com.bo: [GLPI #0050020] Validación - En espera de validación test
+2018-03-07 03:30:16 [2@dercane-Inspiron-5458]
+Warning: an email was undeliverable to isinani@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-07 21:59:38 [2@dercane-Inspiron-5458]
+Warning: an email was undeliverable to isinani@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-07 22:04:33 [2@dercane-Inspiron-5458]
+Warning: an email was undeliverable to lamezaga@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050021] Validación - En espera de validación test2, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-03-09 19:39:11 [2@dercane-Inspiron-5458]
+Warning: an email was undeliverable to helpdesk@redenlace.com.bo with 5 retries remaining. Message: [GLPI] Nuevo cambio test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting

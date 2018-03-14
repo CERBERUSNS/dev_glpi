@@ -1791,13 +1791,13 @@ abstract class CommonITILObject extends CommonDBTM {
 
       if (($p['showtype'] == 'search')
           || $p['withmajor']) {
-         $values[6] = static::getPriorityName(6);
+        // $values[6] = static::getPriorityName(6);
       }
-      $values[5] = static::getPriorityName(5);
+      //$values[5] = static::getPriorityName(5);
       $values[4] = static::getPriorityName(4);
       $values[3] = static::getPriorityName(3);
       $values[2] = static::getPriorityName(2);
-      $values[1] = static::getPriorityName(1);
+      //$values[1] = static::getPriorityName(1);
 
       return Dropdown::showFromArray($p['name'], $values, $p);
    }
