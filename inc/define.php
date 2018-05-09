@@ -35,7 +35,7 @@
 */
 
 // Current version of GLPI
-define('GLPI_VERSION', '9.2.1');
+define('GLPI_VERSION', '9.2.3');
 if (substr(GLPI_VERSION, -4) === '-dev') {
    //for dev version
    define('GLPI_PREVER', str_replace('-dev', '', GLPI_VERSION));
@@ -45,10 +45,10 @@ if (substr(GLPI_VERSION, -4) === '-dev') {
    );
 } else {
    //for stable version
-   define("GLPI_SCHEMA_VERSION", '9.2.1');
+   define("GLPI_SCHEMA_VERSION", '9.2.3');
 }
 define('GLPI_MIN_PHP', '5.6.0'); // Must also be changed in top of index.php
-define('GLPI_YEAR', '2017');
+define('GLPI_YEAR', '2018');
 if (!defined('GLPI_DEMO_MODE')) {
    define('GLPI_DEMO_MODE', '0');
 }
@@ -104,6 +104,7 @@ $CFG_GLPI['languages'] =  //| NAME in native lang    |LANG FILE  |jquery| tinymc
             'hr_HR' => ['Hrvatski',             'hr_HR.mo','hr',    'hr','croatian'   , 2],
             'hu_HU' => ['Magyar',               'hu_HU.mo','hu',    'hu','hungarian'  , 2],
             'it_IT' => ['Italiano',             'it_IT.mo','it',    'it','italian'    , 2],
+            'kn'    => ['ಕನ್ನಡ',                 'kn.mo',   'en-GB', 'en', 'kannada'   , 2],
             'lv_LV' => ['Latviešu',             'lv_LV.mo','lv',    'lv','latvian'    , 2],
             'lt_LT' => ['Lietuvių',             'lt_LT.mo','lt',    'lt','lithuanian' , 2],
             'nl_NL' => ['Nederlands',           'nl_NL.mo','nl',    'nl','dutch'      , 2],
@@ -230,6 +231,11 @@ $CFG_GLPI["contract_types"]               = array_merge(['Computer', 'Monitor', 
                                                   'Peripheral', 'Phone', 'Printer', 'Project', 'Line',
                                                   'Software', 'SoftwareLicense', 'Certificate'],
                                                   $CFG_GLPI['itemdevices']);
+
+$CFG_GLPI["report_types"]                 = ['Computer', 'Monitor', 'NetworkEquipment',
+                                                  'Peripheral', 'Phone', 'Printer', 'Project',
+                                                  'Software', 'SoftwareLicense', 'Certificate'];
+
 
 $CFG_GLPI["directconnect_types"]          = ['Monitor', 'Peripheral', 'Phone', 'Printer'];
 
@@ -428,7 +434,7 @@ $CFG_GLPI["certificate_types"]     = ['Computer',
 
 $CFG_GLPI['javascript'] = [
    'central'   => [
-      'central'   => ['fullcalendar']
+      'central'   => ['fullcalendar', 'tinymce']
    ],
    'helpdesk'  => [
       'planning'  => ['fullcalendar', 'colorpicker', 'tinymce'],
@@ -454,6 +460,7 @@ $CFG_GLPI['javascript'] = [
    ],
    'admin'     => ['colorpicker', 'clipboard'],
    'preference'=> ['colorpicker', 'clipboard'],
+   'self-service' => ['colorpicker', 'tinymce']
 ];
 
 //Maximum time, in miliseconds a saved search should not exeed

@@ -179,15 +179,16 @@ class Planning extends CommonGLPI {
     * @param $name   select name
     * @param $value  default value (default '')
     * @param $display  display of send string ? (true by default)
+    * @param $options  options
    **/
-   static function dropdownState($name, $value = '', $display = true) {
+   static function dropdownState($name, $value = '', $display = true, $options = []) {
 
       $values = [static::INFO => _n('Information', 'Information', 1),
                       static::TODO => __('To do'),
                       static::DONE => __('Done')];
 
-      return Dropdown::showFromArray($name, $values, ['value'   => $value,
-                                                           'display' => $display]);
+      return Dropdown::showFromArray($name, $values, array_merge(['value'   => $value,
+                                                                  'display' => $display], $options));
    }
 
 
@@ -292,6 +293,9 @@ class Planning extends CommonGLPI {
       }
       $realbegin = $begin." ".$CFG_GLPI["planning_begin"];
       $realend   = $end." ".$CFG_GLPI["planning_end"];
+      if ($CFG_GLPI["planning_end"] == "24:00") {
+         $realend = $end." 23:59:59";
+      }
 
       $users = [];
 
@@ -2183,6 +2187,11 @@ class Planning extends CommonGLPI {
                // be sure to replace nl by \r\n
                $description = preg_replace("/<br( [^>]*)?".">/i", "\r\n", $description);
                $description = Html::clean($description);
+            } else if (isset($val["text"])) {
+               $description = $val["text"];
+               // be sure to replace nl by \r\n
+               $description = preg_replace("/<br( [^>]*)?".">/i", "\r\n", $description);
+               $description = Html::clean($description);
             } else if (isset($val["name"])) {
                $description = $val["name"];
                // be sure to replace nl by \r\n
@@ -2202,7 +2211,7 @@ class Planning extends CommonGLPI {
       $filename = date( 'YmdHis' ).'.ics';
 
       @Header("Content-Disposition: attachment; filename=\"$filename\"");
-      @Header("Content-Length: ".Toolbox::strlen($output));
+      //@Header("Content-Length: ".Toolbox::strlen($output));
       @Header("Connection: close");
       @Header("content-type: text/calendar; charset=utf-8");
 

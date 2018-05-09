@@ -1,28 +1,78 @@
-2018-02-26 02:18:06 [271@dercane-Inspiron-5458]
-[login] 3: isinani inició la sesión desde la IP ::1
-2018-03-01 01:28:25 [@dercane-Inspiron-5458]
-[login] 3: Fallo en el inicio de sesión de asd desde la IP ::1
-2018-03-01 01:42:25 [@dercane-Inspiron-5458]
-[login] 3: isinani inició la sesión desde la IP ::1
-2018-03-07 00:14:46 [2@dercane-Inspiron-5458]
+2018-04-06 16:28:33 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-06 16:29:06 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-06 16:29:14 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-06 16:29:26 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-06 16:29:32 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-06 16:31:06 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-06 16:31:34 [@PC100]
+[login] 3: glpi inició la sesión desde la IP 127.0.0.1
+2018-04-18 17:46:22 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-18 17:46:28 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-18 17:51:44 [@PC100]
+[login] 3: glpi inició la sesión desde la IP 127.0.0.1
+2018-04-19 15:29:38 [@PC100]
+[login] 3: glpi inició la sesión desde la IP 127.0.0.1
+2018-04-23 15:36:26 [@PC100]
+[login] 3: glpi inició la sesión desde la IP 127.0.0.1
+2018-04-23 22:09:43 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-23 22:09:49 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-23 22:09:55 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-23 22:12:09 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP ::1
+2018-04-23 22:13:27 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP ::1
+2018-04-23 22:13:34 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP ::1
+2018-04-23 22:14:34 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-23 22:15:05 [@PC100]
+[login] 3: Fallo en el inicio de sesión de glpi desde la IP 127.0.0.1
+2018-04-23 22:18:55 [@PC100]
+[login] 3: glpi inició la sesión desde la IP 127.0.0.1
+2018-04-23 22:19:05 [@PC100]
+[login] 3: glpi inició la sesión desde la IP 127.0.0.1
+2018-04-23 22:20:34 [@PC100]
 [login] 3: glpi inició la sesión desde la IP ::1
-2018-03-07 22:18:14 [@dercane-Inspiron-5458]
-[login] 3: isinani inició la sesión desde la IP ::1
-2018-03-07 22:34:36 [@dercane-Inspiron-5458]
-[login] 3: Fallo en el inicio de sesión de glpi desde la IP ::1
-2018-03-07 22:34:43 [@dercane-Inspiron-5458]
-[login] 3: Fallo en el inicio de sesión de glpi desde la IP ::1
-2018-03-07 22:34:57 [@dercane-Inspiron-5458]
+2018-04-23 22:30:10 [@PC100]
 [login] 3: glpi inició la sesión desde la IP ::1
-2018-03-08 01:07:24 [@dercane-Inspiron-5458]
-[login] 3: isinani inició la sesión desde la IP ::1
-2018-03-09 19:26:16 [@dercane-Inspiron-5458]
-[login] 3: Fallo en el inicio de sesión de glpi desde la IP ::1
-2018-03-09 19:26:44 [@dercane-Inspiron-5458]
+2018-04-23 23:29:36 [@PC100]
 [login] 3: glpi inició la sesión desde la IP ::1
-2018-03-09 19:30:27 [@dercane-Inspiron-5458]
-[login] 3: isinani inició la sesión desde la IP ::1
-2018-03-09 19:32:14 [@dercane-Inspiron-5458]
-[login] 3: Fallo en el inicio de sesión de glpi desde la IP ::1
-2018-03-09 19:35:31 [@dercane-Inspiron-5458]
+2018-04-24 15:07:51 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-04-25 15:09:06 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-04-25 21:39:29 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-04-27 15:47:38 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-04-30 15:19:47 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-04-30 21:21:16 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-05-02 15:51:15 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-05-02 18:58:57 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-05-02 21:57:59 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-05-02 22:24:50 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-05-03 01:22:39 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-05-03 15:36:00 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-05-04 21:03:57 [@PC100]
+[login] 3: glpi inició la sesión desde la IP ::1
+2018-05-05 01:02:50 [@dercane-Inspiron-5458]
 [login] 3: glpi inició la sesión desde la IP ::1

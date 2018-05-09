@@ -389,6 +389,9 @@ class Update extends CommonGLPI {
          case "9.1.4":
          case "9.1.5":
          case "9.1.6":
+         case "9.1.7":
+         case "9.1.7.1":
+         case "9.1.8":
          case "9.2-dev":
             include_once("{$updir}update_91_92.php");
             update91to92();
@@ -396,9 +399,20 @@ class Update extends CommonGLPI {
          case "9.2":
             include_once("{$updir}update_92_921.php");
             update92to921();
-            break;
 
          case "9.2.1":
+            include_once("{$updir}update_921_922.php");
+            update921to922();
+
+         case "9.2.2":
+            //run 9.2.2 upgrade that have been missed,
+            //see https://github.com/glpi-project/glpi/issues/3659
+            include_once("{$updir}update_921_922.php");
+            update921to922();
+            include_once("{$updir}update_922_923.php");
+            update922to923();
+
+         case "9.2.3":
          case GLPI_VERSION:
          case GLPI_SCHEMA_VERSION:
             break;
@@ -425,13 +439,6 @@ class Update extends CommonGLPI {
          // Downstream packages may provide a good system cron
          $query = "UPDATE `glpi_crontasks` SET `mode`=2 WHERE `name`!='watcher' AND (`allowmode` & 2)";
          $DB->queryOrDie($query);
-      }
-
-      if (isCommandLine() && isset($this->args['optimize']) || !isCommandLine()) {
-         DBmysql::optimize_tables($this->migration);
-         if (isCommandLine()) {
-            $this->migration->displayWarning(__("Optimize done."));
-         }
       }
    }
 

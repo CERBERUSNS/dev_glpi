@@ -3,6 +3,11 @@
 The present file will list all changes made to the project; according to the
 [Keep a Changelog](http://keepachangelog.com/) project.
 
+## [9.2.2]
+
+- `CommonITILValidation::isAllValidationsHaveSameStatusForTicket` has been deprecated
+- `CommonITILValidation::getNumberValidationForTicket` as been deprecated
+
 ## [9.2.1]
 
 ### Added

@@ -29,23 +29,7 @@ It is distributed under the GNU GENERAL PUBLIC LICENSE Version 2 - please consul
 
 ## Prerequisites
 
-* A web server (Apache, Nginx, IIS, etc.)
-* MariaDB (or MySQL < 5.7)
-* PHP 5.6 or higher
-* Mandatory PHP extensions:
-    - json
-    - mbstring
-    - mysqli
-    - session
-    - gd (picture generation)
-    - curl (CAS authentication)
-
-* Recommended PHP extensions (to enable optional features)
-    - domxml (CAS authentication)
-    - imap (mail collector and users authentication)
-    - ldap (users authentication)
-    - openssl (encrypted communication)
-
+See [prerequisites part f the Installation documentation](http://glpi-install.readthedocs.io/en/latest/prerequisites.html).
 
 ## Download
 
@@ -59,8 +43,8 @@ See :
 Here is a [pdf version](https://forge.glpi-project.org/attachments/download/1901/glpidoc-0.85-en-partial.pdf).
 We are working on a [markdown version](https://github.com/glpi-project/doc)
 
-* [Installation](http://glpi-project.org/spip.php?article61)
-* [Update](http://glpi-project.org/spip.php?article172)
+* [Installation](http://glpi-install.readthedocs.io)
+* [Update](http://glpi-install.readthedocs.io/en/latest/update.html)
 
 
 ## Additional resources
@@ -72,5 +56,6 @@ We are working on a [markdown version](https://github.com/glpi-project/doc)
 * [Suggestions](http://suggest.glpi-project.org)
 * [Forum](http://forum.glpi-project.org)
 * IRC : irc://irc.freenode.org/glpi
+* [Development documentation](http://glpi-developer-documentation.readthedocs.io/en/master/)
 * [Plugin directory](http://plugins.glpi-project.org)
-* [Plugin development documentation](https://github.com/pluginsGLPI/example)
+* [Plugin development documentation](http://glpi-developer-documentation.readthedocs.io/en/master/plugins/index.html)

@@ -1,24 +1,206 @@
-2018-03-07 02:03:51 [2@dercane-Inspiron-5458]
-Warning: an email was undeliverable to mbascope@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
-2018-03-07 02:35:29 [2@dercane-Inspiron-5458]
-Warning: an email was undeliverable to mbascope@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
-2018-03-07 02:37:36 [2@dercane-Inspiron-5458]
-Warning: an email was undeliverable to isinani@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
-2018-03-07 02:48:16 [2@dercane-Inspiron-5458]
-Warning: an email was undeliverable to mbascope@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
-2018-03-07 02:55:09 [2@dercane-Inspiron-5458]
-Warning: an email was undeliverable to mbascope@redenlace.com.bo with 2 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
-2018-03-07 03:19:55 [2@dercane-Inspiron-5458]
-Warning: an email was undeliverable to mbascope@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
-2018-03-07 03:24:22 [2@dercane-Inspiron-5458]
-Warning: an email was undeliverable to mbascope@redenlace.com.bo with 0 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
-2018-03-07 03:24:22 [2@dercane-Inspiron-5458]
-Fatal error: giving up delivery of email to mbascope@redenlace.com.bo: [GLPI #0050020] Validación - En espera de validación test
-2018-03-07 03:30:16 [2@dercane-Inspiron-5458]
-Warning: an email was undeliverable to isinani@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
-2018-03-07 21:59:38 [2@dercane-Inspiron-5458]
-Warning: an email was undeliverable to isinani@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0050020] Validación - En espera de validación test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
-2018-03-07 22:04:33 [2@dercane-Inspiron-5458]
-Warning: an email was undeliverable to lamezaga@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050021] Validación - En espera de validación test2, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
-2018-03-09 19:39:11 [2@dercane-Inspiron-5458]
-Warning: an email was undeliverable to helpdesk@redenlace.com.bo with 5 retries remaining. Message: [GLPI] Nuevo cambio test, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:37 [@PC100]
+Warning: an email was undeliverable to mmamani@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0045064] Clausura de la petición 2A-/*otr-   */-Inventario de Certificados y llaves de servidores, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:39 [@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0045064] Clausura de la petición 2A-/*otr-   */-Inventario de Certificados y llaves de servidores, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:40 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0045064] Clausura de la petición 2A-/*otr-   */-Inventario de Certificados y llaves de servidores, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:41 [@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0045064] Clausura de la petición 2A-/*otr-   */-Inventario de Certificados y llaves de servidores, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:42 [@PC100]
+Warning: an email was undeliverable to lrubindecelis@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0038333] Clausura de la petición 2B-/*itm-   */-SERVICE CHARGE PARA DISCAPACITADOS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:43 [@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0038333] Clausura de la petición 2B-/*itm-   */-SERVICE CHARGE PARA DISCAPACITADOS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:44 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0038333] Clausura de la petición 2B-/*itm-   */-SERVICE CHARGE PARA DISCAPACITADOS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:45 [@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0038333] Clausura de la petición 2B-/*itm-   */-SERVICE CHARGE PARA DISCAPACITADOS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:46 [@PC100]
+Warning: an email was undeliverable to lamezaga@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0038354] Clausura de la petición 2B-/*otr-   */-04-07-17-Requerimiento de generación de volumen transaccional SPD - Adquirencia POS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:47 [@PC100]
+Warning: an email was undeliverable to ezapata@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0038354] Closing of the ticket 2B-/*otr-   */-04-07-17-Requerimiento de generación de volumen transaccional SPD - Adquirencia POS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:48 [@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0038354] Clausura de la petición 2B-/*otr-   */-04-07-17-Requerimiento de generación de volumen transaccional SPD - Adquirencia POS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:49 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0038354] Clausura de la petición 2B-/*otr-   */-04-07-17-Requerimiento de generación de volumen transaccional SPD - Adquirencia POS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:50 [@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0038354] Clausura de la petición 2B-/*otr-   */-04-07-17-Requerimiento de generación de volumen transaccional SPD - Adquirencia POS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:51 [@PC100]
+Warning: an email was undeliverable to afresco@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0045212] Clausura de la petición 2A-/*ps -   */-Conexión de ATM al ambiente TEST NAZIR, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:52 [@PC100]
+Warning: an email was undeliverable to mmamani@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0045212] Clausura de la petición 2A-/*ps -   */-Conexión de ATM al ambiente TEST NAZIR, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:53 [@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0045212] Clausura de la petición 2A-/*ps -   */-Conexión de ATM al ambiente TEST NAZIR, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:54 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0045212] Clausura de la petición 2A-/*ps -   */-Conexión de ATM al ambiente TEST NAZIR, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:55 [@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0045212] Clausura de la petición 2A-/*ps -   */-Conexión de ATM al ambiente TEST NAZIR, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:56 [@PC100]
+Warning: an email was undeliverable to afresco@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0039378] Clausura de la petición 2A-/*ps -   */-Liberación Producción 27/03 EMISOR V3 (Regularización), Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:57 [@PC100]
+Warning: an email was undeliverable to etapia@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0039378] Clausura de la petición 2A-/*ps -   */-Liberación Producción 27/03 EMISOR V3 (Regularización), Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:28:58 [@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0039378] Clausura de la petición 2A-/*ps -   */-Liberación Producción 27/03 EMISOR V3 (Regularización), Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:29:00 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0039378] Clausura de la petición 2A-/*ps -   */-Liberación Producción 27/03 EMISOR V3 (Regularización), Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:29:01 [@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0039378] Clausura de la petición 2A-/*ps -   */-Liberación Producción 27/03 EMISOR V3 (Regularización), Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:29:02 [@PC100]
+Warning: an email was undeliverable to dcondori@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0039333] Clausura de la petición 2B-/*ps -   */-Archivos Migración PayStudio Emisor - Cierre Marzo 2017 (EcoFuturo) - Regularización, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:29:03 [@PC100]
+Warning: an email was undeliverable to gheredia@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0039333] Clausura de la petición 2B-/*ps -   */-Archivos Migración PayStudio Emisor - Cierre Marzo 2017 (EcoFuturo) - Regularización, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:29:04 [@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0039333] Clausura de la petición 2B-/*ps -   */-Archivos Migración PayStudio Emisor - Cierre Marzo 2017 (EcoFuturo) - Regularización, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-06 16:29:05 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0039333] Clausura de la petición 2B-/*ps -   */-Archivos Migración PayStudio Emisor - Cierre Marzo 2017 (EcoFuturo) - Regularización, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:45:53 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 0 retries remaining. Message: [GLPI #0045943] Clausura de la petición 2A-/*otr-   */-falla al entrar en la pagina del bcb en la maquina de Miguel Castelo , Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:45:53 [@PC100]
+Fatal error: giving up delivery of email to isinani@atc.com.bo: [GLPI #0045943] Clausura de la petición 2A-/*otr-   */-falla al entrar en la pagina del bcb en la maquina de Miguel Castelo 
+2018-04-18 17:45:54 [@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 0 retries remaining. Message: [GLPI #0045943] Clausura de la petición 2A-/*otr-   */-falla al entrar en la pagina del bcb en la maquina de Miguel Castelo , Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:45:54 [@PC100]
+Fatal error: giving up delivery of email to jcorzon@redenlace.com.bo: [GLPI #0045943] Clausura de la petición 2A-/*otr-   */-falla al entrar en la pagina del bcb en la maquina de Miguel Castelo 
+2018-04-18 17:45:55 [@PC100]
+Warning: an email was undeliverable to jromero@redenlace.com.bo with 0 retries remaining. Message: [GLPI #0045986] Clausura de la petición 2A-/*itm-   */-alta cuentas y tarjetas, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:45:55 [@PC100]
+Fatal error: giving up delivery of email to jromero@redenlace.com.bo: [GLPI #0045986] Clausura de la petición 2A-/*itm-   */-alta cuentas y tarjetas
+2018-04-18 17:45:56 [@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 0 retries remaining. Message: [GLPI #0045986] Clausura de la petición 2A-/*itm-   */-alta cuentas y tarjetas, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:45:56 [@PC100]
+Fatal error: giving up delivery of email to jortuno@redenlace.com.bo: [GLPI #0045986] Clausura de la petición 2A-/*itm-   */-alta cuentas y tarjetas
+2018-04-18 17:45:57 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 1 retries remaining. Message: [GLPI #0045986] Clausura de la petición 2A-/*itm-   */-alta cuentas y tarjetas, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:45:58 [@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0045986] Clausura de la petición 2A-/*itm-   */-alta cuentas y tarjetas, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:45:59 [@PC100]
+Warning: an email was undeliverable to afresco@redenlace.com.bo with 0 retries remaining. Message: [GLPI #0046007] Clausura de la petición 2B-/*ps -   */-26-10-17-Liberación Producción 28/08 - Nota Número 0191, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:45:59 [@PC100]
+Fatal error: giving up delivery of email to afresco@redenlace.com.bo: [GLPI #0046007] Clausura de la petición 2B-/*ps -   */-26-10-17-Liberación Producción 28/08 - Nota Número 0191
+2018-04-18 17:46:00 [@PC100]
+Warning: an email was undeliverable to echurqui@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0046007] Clausura de la petición 2B-/*ps -   */-26-10-17-Liberación Producción 28/08 - Nota Número 0191, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:01 [@PC100]
+Warning: an email was undeliverable to flopez@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0046007] Clausura de la petición 2B-/*ps -   */-26-10-17-Liberación Producción 28/08 - Nota Número 0191, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:02 [@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0046007] Clausura de la petición 2B-/*ps -   */-26-10-17-Liberación Producción 28/08 - Nota Número 0191, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:03 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 1 retries remaining. Message: [GLPI #0046007] Clausura de la petición 2B-/*ps -   */-26-10-17-Liberación Producción 28/08 - Nota Número 0191, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:05 [@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0046007] Clausura de la petición 2B-/*ps -   */-26-10-17-Liberación Producción 28/08 - Nota Número 0191, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:06 [@PC100]
+Warning: an email was undeliverable to pgodoy@redenlace.com.bo with 0 retries remaining. Message: [GLPI #0046126] Clausura de la petición 2B-/*itm-   */-09-10-17-REQUERIMIENTO URGENTE "LOYALTY CLUB", Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:06 [@PC100]
+Fatal error: giving up delivery of email to pgodoy@redenlace.com.bo: [GLPI #0046126] Clausura de la petición 2B-/*itm-   */-09-10-17-REQUERIMIENTO URGENTE "LOYALTY CLUB"
+2018-04-18 17:46:07 [@PC100]
+Warning: an email was undeliverable to jromero@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0046126] Clausura de la petición 2B-/*itm-   */-09-10-17-REQUERIMIENTO URGENTE "LOYALTY CLUB", Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:08 [@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0046126] Clausura de la petición 2B-/*itm-   */-09-10-17-REQUERIMIENTO URGENTE "LOYALTY CLUB", Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:09 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 1 retries remaining. Message: [GLPI #0046126] Clausura de la petición 2B-/*itm-   */-09-10-17-REQUERIMIENTO URGENTE "LOYALTY CLUB", Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:10 [@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0046126] Clausura de la petición 2B-/*itm-   */-09-10-17-REQUERIMIENTO URGENTE "LOYALTY CLUB", Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:11 [@PC100]
+Warning: an email was undeliverable to eaguirre@redenlace.com.bo with 0 retries remaining. Message: [GLPI #0046148] Clausura de la petición 2A-/*otr-   */-AfinityCode de tarjetas Signature de BCP, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:11 [@PC100]
+Fatal error: giving up delivery of email to eaguirre@redenlace.com.bo: [GLPI #0046148] Clausura de la petición 2A-/*otr-   */-AfinityCode de tarjetas Signature de BCP
+2018-04-18 17:46:12 [@PC100]
+Warning: an email was undeliverable to jromero@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0046148] Clausura de la petición 2A-/*otr-   */-AfinityCode de tarjetas Signature de BCP, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:13 [@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0046148] Clausura de la petición 2A-/*otr-   */-AfinityCode de tarjetas Signature de BCP, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:14 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 1 retries remaining. Message: [GLPI #0046148] Clausura de la petición 2A-/*otr-   */-AfinityCode de tarjetas Signature de BCP, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:15 [@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0046148] Clausura de la petición 2A-/*otr-   */-AfinityCode de tarjetas Signature de BCP, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:16 [@PC100]
+Warning: an email was undeliverable to glarrea@redenlace.com.bo with 0 retries remaining. Message: [GLPI #0046160] Clausura de la petición 2A-/*itm-   */-TARJETAS DE DEBITO BISA INNOMINADAS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:16 [@PC100]
+Fatal error: giving up delivery of email to glarrea@redenlace.com.bo: [GLPI #0046160] Clausura de la petición 2A-/*itm-   */-TARJETAS DE DEBITO BISA INNOMINADAS
+2018-04-18 17:46:17 [@PC100]
+Warning: an email was undeliverable to jromero@redenlace.com.bo with 2 retries remaining. Message: [GLPI #0046160] Clausura de la petición 2A-/*itm-   */-TARJETAS DE DEBITO BISA INNOMINADAS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:18 [@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 2 retries remaining. Message: [GLPI #0046160] Clausura de la petición 2A-/*itm-   */-TARJETAS DE DEBITO BISA INNOMINADAS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:19 [@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 2 retries remaining. Message: [GLPI #0046160] Clausura de la petición 2A-/*itm-   */-TARJETAS DE DEBITO BISA INNOMINADAS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:20 [@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 2 retries remaining. Message: [GLPI #0046160] Clausura de la petición 2A-/*itm-   */-TARJETAS DE DEBITO BISA INNOMINADAS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-18 17:46:21 [@PC100]
+Warning: an email was undeliverable to jromero@redenlace.com.bo with 1 retries remaining. Message: [GLPI #0046241] Clausura de la petición 2A-/*otr-usr*/-Usuario y Contraseña E-LEARNING, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:41 [2@PC100]
+Warning: an email was undeliverable to mmamani@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0045064] Clausura de la petición 2A-/*otr-   */-Inventario de Certificados y llaves de servidores, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:42 [2@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0045064] Clausura de la petición 2A-/*otr-   */-Inventario de Certificados y llaves de servidores, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:43 [2@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0045064] Clausura de la petición 2A-/*otr-   */-Inventario de Certificados y llaves de servidores, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:44 [2@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0045064] Clausura de la petición 2A-/*otr-   */-Inventario de Certificados y llaves de servidores, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:45 [2@PC100]
+Warning: an email was undeliverable to lrubindecelis@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0038333] Clausura de la petición 2B-/*itm-   */-SERVICE CHARGE PARA DISCAPACITADOS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:46 [2@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0038333] Clausura de la petición 2B-/*itm-   */-SERVICE CHARGE PARA DISCAPACITADOS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:47 [2@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0038333] Clausura de la petición 2B-/*itm-   */-SERVICE CHARGE PARA DISCAPACITADOS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:48 [2@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0038333] Clausura de la petición 2B-/*itm-   */-SERVICE CHARGE PARA DISCAPACITADOS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:49 [2@PC100]
+Warning: an email was undeliverable to lamezaga@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0038354] Clausura de la petición 2B-/*otr-   */-04-07-17-Requerimiento de generación de volumen transaccional SPD - Adquirencia POS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:50 [2@PC100]
+Warning: an email was undeliverable to ezapata@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0038354] Closing of the ticket 2B-/*otr-   */-04-07-17-Requerimiento de generación de volumen transaccional SPD - Adquirencia POS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:51 [2@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0038354] Clausura de la petición 2B-/*otr-   */-04-07-17-Requerimiento de generación de volumen transaccional SPD - Adquirencia POS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:52 [2@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0038354] Clausura de la petición 2B-/*otr-   */-04-07-17-Requerimiento de generación de volumen transaccional SPD - Adquirencia POS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:53 [2@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0038354] Clausura de la petición 2B-/*otr-   */-04-07-17-Requerimiento de generación de volumen transaccional SPD - Adquirencia POS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:54 [2@PC100]
+Warning: an email was undeliverable to afresco@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0045212] Clausura de la petición 2A-/*ps -   */-Conexión de ATM al ambiente TEST NAZIR, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:55 [2@PC100]
+Warning: an email was undeliverable to mmamani@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0045212] Clausura de la petición 2A-/*ps -   */-Conexión de ATM al ambiente TEST NAZIR, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:56 [2@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0045212] Clausura de la petición 2A-/*ps -   */-Conexión de ATM al ambiente TEST NAZIR, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:58 [2@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0045212] Clausura de la petición 2A-/*ps -   */-Conexión de ATM al ambiente TEST NAZIR, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:43:59 [2@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0045212] Clausura de la petición 2A-/*ps -   */-Conexión de ATM al ambiente TEST NAZIR, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:44:00 [2@PC100]
+Warning: an email was undeliverable to afresco@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0039378] Clausura de la petición 2A-/*ps -   */-Liberación Producción 27/03 EMISOR V3 (Regularización), Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:44:01 [2@PC100]
+Warning: an email was undeliverable to etapia@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0039378] Clausura de la petición 2A-/*ps -   */-Liberación Producción 27/03 EMISOR V3 (Regularización), Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:44:02 [2@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0039378] Clausura de la petición 2A-/*ps -   */-Liberación Producción 27/03 EMISOR V3 (Regularización), Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:44:03 [2@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0039378] Clausura de la petición 2A-/*ps -   */-Liberación Producción 27/03 EMISOR V3 (Regularización), Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:44:04 [2@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0039378] Clausura de la petición 2A-/*ps -   */-Liberación Producción 27/03 EMISOR V3 (Regularización), Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:44:05 [2@PC100]
+Warning: an email was undeliverable to dcondori@redenlace.com.bo with 3 retries remaining. Message: [GLPI #0039333] Clausura de la petición 2B-/*ps -   */-Archivos Migración PayStudio Emisor - Cierre Marzo 2017 (EcoFuturo) - Regularización, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:44:06 [2@PC100]
+Warning: an email was undeliverable to gheredia@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0039333] Clausura de la petición 2B-/*ps -   */-Archivos Migración PayStudio Emisor - Cierre Marzo 2017 (EcoFuturo) - Regularización, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:44:07 [2@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0039333] Clausura de la petición 2B-/*ps -   */-Archivos Migración PayStudio Emisor - Cierre Marzo 2017 (EcoFuturo) - Regularización, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:44:08 [2@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0039333] Clausura de la petición 2B-/*ps -   */-Archivos Migración PayStudio Emisor - Cierre Marzo 2017 (EcoFuturo) - Regularización, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-04-23 16:44:09 [2@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0039333] Clausura de la petición 2B-/*ps -   */-Archivos Migración PayStudio Emisor - Cierre Marzo 2017 (EcoFuturo) - Regularización, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 21:52:25 [2@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 5 retries remaining. Message: [GLPI #0050034] Nueva petición prueba de creacion de ticket, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 22:19:06 [2@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050034] Actualizar una petición prueba de creacion de ticket, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 22:20:18 [2@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 5 retries remaining. Message: [GLPI #0050034] Petición resuelta prueba de creacion de ticket, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 22:24:26 [2@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050035] Nueva petición prueba de bruno, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 22:25:10 [2@PC100]
+Warning: an email was undeliverable to isinani@atc.com.bo with 4 retries remaining. Message: [GLPI #0050034] Petición resuelta prueba de creacion de ticket, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 22:26:36 [2@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050034] Petición resuelta prueba de creacion de ticket, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 22:27:16 [2@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 4 retries remaining. Message: [GLPI #0050034] Petición resuelta prueba de creacion de ticket, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 23:12:31 [2@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050031] Clausura de la petición PRUEBA VI CERBERUS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 23:14:39 [2@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050013] Clausura de la petición REPORTES MASTERCARD COOPERATIVA JESUS DE NAZARENO, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 23:22:45 [2@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050031] Clausura de la petición PRUEBA VI CERBERUS, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 23:24:44 [2@PC100]
+Warning: an email was undeliverable to jortuno@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050035] Petición resuelta prueba de bruno, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+2018-05-02 23:28:17 [2@PC100]
+Warning: an email was undeliverable to jcorzon@redenlace.com.bo with 5 retries remaining. Message: [GLPI #0050036] Nueva petición ultima prueba, Error: SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting

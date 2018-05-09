@@ -128,8 +128,10 @@ class User extends CommonDBTM {
 
 
    function canUpdateItem() {
+
+      $entities = Profile_User::getUserEntities($this->fields['id'], false);
       if (Session::isViewAllEntities()
-          || Session::haveAccessToOneOfEntities($this->getEntities())) {
+          || Session::haveAccessToOneOfEntities($entities)) {
          return true;
       }
       return false;
@@ -398,6 +400,8 @@ class User extends CommonDBTM {
 
       $ue = new UserEmail();
       $ue->deleteByCriteria(['users_id' => $this->fields['id']]);
+
+      $this->dropPictureFiles($this->fields['picture']);
 
       // Ticket rules use various _users_id_*
       Rule::cleanForItemAction($this, '_users_id%');
@@ -806,12 +810,14 @@ class User extends CommonDBTM {
          }
       }
 
-      if (isset($input['_reset_personal_token'])) {
+      if (isset($input['_reset_personal_token'])
+          && $input['_reset_personal_token']) {
          $input['personal_token']      = self::getUniqueToken('personal_token');
          $input['personal_token_date'] = $_SESSION['glpi_currenttime'];
       }
 
-      if (isset($input['_reset_api_token'])) {
+      if (isset($input['_reset_api_token'])
+          && $input['_reset_api_token']) {
          $input['api_token']      = self::getUniqueToken('api_token');
          $input['api_token_date'] = $_SESSION['glpi_currenttime'];
       }
@@ -1294,7 +1300,7 @@ class User extends CommonDBTM {
          $sr = @ ldap_read($ldap_connection, $userdn, "objectClass=*", $group_fields);
          $v  = AuthLDAP::get_entries_clean($ldap_connection, $sr);
 
-         for ($i=0; $i<count($v['count']); $i++) {
+         for ($i=0; $i < $v['count']; $i++) {
             //Try to find is DN in present and needed: if yes, then extract only the OU from it
             if ((($ldap_method["group_field"] == 'dn') || in_array('ou', $group_fields))
                 && isset($v[$i]['dn'])) {
@@ -2220,6 +2226,13 @@ class User extends CommonDBTM {
       echo $user->getField('mobile');
       echo "</td>";
       echo "</tr>";
+
+      echo "<tr class='tab_bg_1'>";
+      echo "<td class='b'>";
+      echo __('Email');
+      echo "</td><td>";
+      echo $user->getDefaultEmail();
+      echo "</td></tr>";
 
       echo "<tr class='tab_bg_1'>";
       echo "<td class='b'>";
@@ -3213,7 +3226,7 @@ class User extends CommonDBTM {
                }
             }
             // Add me to users list for central
-            if ($_SESSION['glpiactiveprofile']['interface'] == 'central') {
+            if (Session::getCurrentInterface() == 'central') {
                $users[Session::getLoginUserID()] = Session::getLoginUserID();
             }
 
@@ -3246,7 +3259,7 @@ class User extends CommonDBTM {
                }
             }
             // Add me to users list for central
-            if ($_SESSION['glpiactiveprofile']['interface'] == 'central') {
+            if (Session::getCurrentInterface() == 'central') {
                $users[Session::getLoginUserID()] = Session::getLoginUserID();
             }
 

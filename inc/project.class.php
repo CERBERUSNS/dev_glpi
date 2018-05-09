@@ -79,7 +79,7 @@ class Project extends CommonDBTM {
    **/
    function canViewItem() {
 
-      if (!Session::haveAccessToEntity($this->getEntityID())) {
+      if (!parent::canViewItem()) {
          return false;
       }
       return (Session::haveRight(self::$rightname, self::READALL)
@@ -332,6 +332,48 @@ class Project extends CommonDBTM {
       parent::cleanDBonPurge();
    }
 
+   /**
+    * Return visibility joins to add to SQL
+    *
+    * @return string joins to add
+    **/
+   static function addVisibilityJoins() {
+
+      $join = '';
+
+      if (!Session::haveRight("project", Project::READALL)) {
+         $join .= " LEFT JOIN `glpi_projectteams`
+                     ON (`glpi_projectteams`.`projects_id` = `glpi_projects`.`id`) ";
+      }
+
+      return $join;
+   }
+
+   /**
+    * Return visibility to add to SQL
+    *
+    * @return string joins to add
+    **/
+   static function addVisibility() {
+
+      $condition = '';
+      if (!Session::haveRight("project", Project::READALL)) {
+         $teamtable = 'glpi_projectteams';
+         $condition .= "AND (`glpi_projects`.users_id = '" . Session::getLoginUserID() . "'
+                               OR (`$teamtable`.`itemtype` = 'User'
+                                   AND `$teamtable`.`items_id` = '" . Session::getLoginUserID() . "')";
+         if (count($_SESSION['glpigroups'])) {
+            $condition .= " OR (`glpi_projects`.`groups_id`
+                                       IN (" . implode(",", $_SESSION['glpigroups']) . "))";
+            $condition .= " OR (`$teamtable`.`itemtype` = 'Group'
+                                      AND `$teamtable`.`items_id`
+                                          IN (" . implode(",", $_SESSION['glpigroups']) . "))";
+         }
+         $condition .= ") ";
+      }
+
+      return $condition;
+   }
 
    /**
     * Is the current user in the team?

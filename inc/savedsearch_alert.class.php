@@ -308,7 +308,7 @@ class SavedSearch_Alert extends CommonDBChild {
     *
     * @param Crontask $task Crontask instance
     *
-    * @return void
+    * @return int : <0 : need to run again, 0:nothing to do, >0:ok
     */
    static public function cronSavedSearchesAlerts($task) {
       global $DB;
@@ -321,10 +321,27 @@ class SavedSearch_Alert extends CommonDBChild {
       if ($iterator->numrows()) {
          $savedsearch = new SavedSearch();
 
+         $cli_logged = null;
+         if (!isset($_SESSION['glpiname'])) {
+            //required from search class
+            $_SESSION['glpiname'] = 'crontab';
+         }
+
          while ($row = $iterator->next()) {
             //execute saved search to get results
             try {
                $savedsearch->getFromDB($row['savedsearches_id']);
+               if (isCommandLine() && $cli_logged != $savedsearch->fields['users_id']) {
+                  //search requires a logged in user...
+                  $user = new User();
+                  $user->getFromDB($savedsearch->fields['users_id']);
+                  $auth = new Auth();
+                  $auth->user = $user;
+                  $auth->auth_succeded = true;
+                  Session::init($auth);
+                  $cli_logged = $savedsearch->fields['users_id'];
+               }
+
                $data = $savedsearch->execute(true);
                $count = (int)$data['data']['totalcount'];
                $value = (int)$row['value'];
@@ -356,6 +373,7 @@ class SavedSearch_Alert extends CommonDBChild {
                   case self::OP_GREAT:
                      $notify = $count > $value;
                      $tr_op = __('greater than');
+                     break;
                   default:
                      throw new \RuntimeException("Unknonw operator '{$row['operator']}'");
                }
@@ -376,12 +394,15 @@ class SavedSearch_Alert extends CommonDBChild {
                   $alert->getFromDB($row['id']);
                   $data['savedsearch'] = $savedsearch;
                   NotificationEvent::raiseEvent($event, $alert, $data);
+                  $task->addVolume(1);
                }
             } catch (\Exception $e) {
                Toolbox::logDebug($e);
             }
          }
+         return 1;
       }
+      return 0;
    }
 
    function getItemsForLog($itemtype, $items_id) {

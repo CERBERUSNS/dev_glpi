@@ -441,7 +441,7 @@ class Html {
     * @return nothing
    **/
    static function back() {
-      self::redirect($_SERVER['HTTP_REFERER']);
+      self::redirect(self::getBackUrl());
    }
 
 
@@ -512,13 +512,13 @@ class Html {
       global $CFG_GLPI, $HEADER_LOADED;
 
       if (!$HEADER_LOADED) {
-         if (!isset($_SESSION["glpiactiveprofile"]["interface"])) {
+         if (!Session::getCurrentInterface()) {
             self::nullHeader(__('Access denied'));
 
-         } else if ($_SESSION["glpiactiveprofile"]["interface"] == "central") {
+         } else if (Session::getCurrentInterface() == "central") {
             self::header(__('Access denied'));
 
-         } else if ($_SESSION["glpiactiveprofile"]["interface"] == "helpdesk") {
+         } else if (Session::getCurrentInterface() == "helpdesk") {
             self::helpHeader(__('Access denied'));
          }
       }
@@ -826,12 +826,42 @@ class Html {
     * Display a Link to the last page using http_referer if available else use history.back
    **/
    static function displayBackLink() {
-
-      if (isset($_SERVER['HTTP_REFERER'])) {
-         echo "<a href='".$_SERVER['HTTP_REFERER']."'>".__('Back')."</a>";
+      $url_referer = self::getBackUrl();
+      if ($url_referer !== false) {
+         echo "<a href='$url_referer'>".__('Back')."</a>";
       } else {
          echo "<a href='javascript:history.back();'>".__('Back')."</a>";
       }
+   }
+
+   /**
+    * Return an url for getting back to previous page.
+    * Remove `forcetab` parameter if exists to prevent bad tab display
+    *
+    * @param string $url_in optional url to return (without forcetab param), if empty, we will user HTTP_REFERER from server
+    *
+    * @since 9.2.2
+    *
+    * @return mixed [string|boolean] false, if failed, else the url string
+    */
+   static function getBackUrl($url_in = "") {
+      if (isset($_SERVER['HTTP_REFERER'])
+          && strlen($url_in) == 0) {
+         $url_in = $_SERVER['HTTP_REFERER'];
+      }
+      if (strlen($url_in) > 0) {
+         $url = parse_url($url_in);
+
+         if (isset($url['query'])) {
+            parse_str($url['query'], $parameters);
+            unset($parameters['forcetab']);
+            $new_query = http_build_query($parameters);
+            return str_replace($url['query'], $new_query, $url_in);
+         }
+
+         return $url_in;
+      }
+      return false;
    }
 
 
@@ -847,13 +877,13 @@ class Html {
       global $CFG_GLPI, $HEADER_LOADED;
 
       if (!$HEADER_LOADED) {
-         if ($minimal || !isset($_SESSION["glpiactiveprofile"]["interface"])) {
+         if ($minimal || !Session::getCurrentInterface()) {
             self::nullHeader(__('Access denied'), '');
 
-         } else if ($_SESSION["glpiactiveprofile"]["interface"] == "central") {
+         } else if (Session::getCurrentInterface() == "central") {
             self::header(__('Access denied'), '');
 
-         } else if ($_SESSION["glpiactiveprofile"]["interface"] == "helpdesk") {
+         } else if (Session::getCurrentInterface() == "helpdesk") {
             self::helpHeader(__('Access denied'), '');
          }
       }
@@ -971,7 +1001,7 @@ class Html {
       }
 
       if (!$params['create']) {
-         Html::glpi_flush();
+         self::glpi_flush();
       }
    }
 
@@ -1195,7 +1225,7 @@ class Html {
          }
       }
 
-      if ($_SESSION["glpiactiveprofile"]["interface"] == "helpdesk") {
+      if (Session::getCurrentInterface() == "helpdesk") {
          echo Html::css('lib/jqueryplugins/rateit/rateit.css');
          Html::requireJs('rateit');
       }
@@ -1272,6 +1302,7 @@ class Html {
 
       // End of Head
       echo "</head>\n";
+      self::glpi_flush();
    }
 
 
@@ -1660,10 +1691,7 @@ class Html {
       }
       $HEADER_LOADED = true;
 
-      self::includeHeader($title);
-
-      // load tinymce lib
-      Html::requireJs('tinymce');
+      self::includeHeader($title, 'self-service');
 
       // Body
       $body_class = "layout_".$_SESSION['glpilayout'];
@@ -1925,15 +1953,18 @@ class Html {
 
 
    /**
-    * Flush the current displayed items (do not works really fine)
+    * Flushes the system write buffers of PHP and whatever backend PHP is using (CGI, a web server, etc).
+    * This attempts to push current output all the way to the browser with a few caveats.
+    * @see https://www.sitepoint.com/php-streaming-output-buffering-explained/
    **/
    static function glpi_flush() {
 
-      flush();
       if (function_exists("ob_flush")
           && (ob_get_length() !== false)) {
          ob_flush();
       }
+
+      flush();
    }
 
 
@@ -3476,12 +3507,13 @@ class Html {
             menubar: false,
             statusbar: false,
             skin: 'light',
+            cache_suffix: '?v=".GLPI_VERSION."',
             setup: function(editor) {
                if ($('#$name').attr('required') == 'required') {
                   $('#$name').closest('form').find('input[type=submit]').click(function() {
                      editor.save();
                      if ($('#$name').val() == '') {
-                        alert('".__('The description field is mandatory')."');
+                        alert('".__s('The description field is mandatory')."');
                      }
                   });
                   editor.on('keyup', function (e) {
@@ -3512,6 +3544,7 @@ class Html {
                   ? 'glpi_upload_doc'
                   : '',
             ],
+            autoresize_max_height: 500,
             toolbar: 'styleselect | bold italic | forecolor backcolor | bullist numlist outdent indent | table link image | code fullscreen',
             $readonlyjs
          });
@@ -3539,8 +3572,8 @@ class Html {
 
       // If is html content
       if ($content != strip_tags($content)) {
-         $content = Html::clean(Toolbox::convertImageToTag($content), false, 1);
-         $content = Html::entity_decode_deep(Html::clean(Toolbox::convertImageToTag($content)));
+         $content = Toolbox::convertImageToTag($content);
+         $content = Toolbox::getHtmlToDisplay($content);
       }
 
       return $content;
@@ -3686,6 +3719,7 @@ class Html {
          echo "<tr><th>KEY</th><th>=></th><th>VALUE</th></tr>";
 
          foreach ($tab as $key => $val) {
+            $key = Toolbox::clean_cross_side_scripting_deep($key);
             echo "<tr class='tab_bg_1'><td class='top right'>";
             echo $key;
             $is_array = is_array($val);
@@ -3812,7 +3846,7 @@ class Html {
 
       if (!empty($item_type_output)
           && isset($_SESSION["glpiactiveprofile"])
-          && ($_SESSION["glpiactiveprofile"]["interface"] == "central")) {
+          && (Session::getCurrentInterface() == "central")) {
 
          echo "<td class='tab_bg_2 responsive_hidden' width='30%'>";
          echo "<form method='GET' action='".$CFG_GLPI["root_doc"]."/front/report.dynamic.php'>";
@@ -5443,14 +5477,15 @@ class Html {
     *
     * @since version 9.2
     *
-    * @param string $tag      the tag identifier of the document
-    * @param int $width       witdh of the final image
-    * @param int $height      height of the final image
-    * @param bool $addLink    boolean, do we need to add an anchor link
+    * @param string $tag       the tag identifier of the document
+    * @param int $width        witdh of the final image
+    * @param int $height       height of the final image
+    * @param bool $addLink     boolean, do we need to add an anchor link
+    * @param string $more_link append to the link (ex &test=true)
     *
     * @return nothing
    **/
-   public static function convertTagFromRichTextToImageTag($tag, $width, $height, $addLink = true) {
+   public static function convertTagFromRichTextToImageTag($tag, $width, $height, $addLink = true, $more_link = "") {
       global $CFG_GLPI;
 
       $doc = new Document();
@@ -5469,20 +5504,23 @@ class Html {
             }
             if (isset($image['tag'])) {
                if ($ok || empty($mime)) {
+                  $glpi_root = $CFG_GLPI['root_doc'];
+                  if (isCommandLine() && isset($CFG_GLPI['url_base'])) {
+                     $glpi_root = $CFG_GLPI['url_base'];
+                  }
                   // Replace tags by image in textarea
-
                   if ($addLink) {
-                     $out .= '<a href="'.$CFG_GLPI['root_doc'].
-                             '/front/document.send.php?docid='.$id.
+                     $out .= '<a href="'.$glpi_root.
+                             '/front/document.send.php?docid='.$id.$more_link.
                              '" target="_blank"><img alt="'.$image['tag'].
                              '" height="'.$height.'" width="'.$width.
-                             '" src="'.$CFG_GLPI['root_doc'].
-                        '/front/document.send.php?docid='.$id.'" /></a>';
+                             '" src="'.$glpi_root.
+                        '/front/document.send.php?docid='.$id.$more_link.'" /></a>';
                   } else {
                      $out .= '<img alt="'.$image['tag'].
                              '" height="'.$height.'" width="'.$width.
-                             '" src="'.$CFG_GLPI['root_doc'].
-                             '/front/document.send.php?docid='.$id.'" />';
+                             '" src="'.$glpi_root.
+                             '/front/document.send.php?docid='.$id.$more_link.'" />';
                   }
                }
             }
@@ -5493,16 +5531,19 @@ class Html {
    }
 
    /**
-    * Get copyright message as HTML (used in footers)
-    *
+    * Get copyright message in HTML (used in footers)
     * @since 9.1
-    *
-    * @return text
+    * @param boolean $withVersion include GLPI version ?
+    * @return string HTML copyright
     */
-   static function getCopyrightMessage() {
-      $message = "<a href=\"http://glpi-project.org/\" title=\"Powered By Teclib\" class=\"copyright\">";
-      $message .= "GLPI " . GLPI_VERSION .
-         " Copyright (C) 2015-" . GLPI_YEAR . " Teclib' and contributors".
+   static function getCopyrightMessage($withVersion = true) {
+      $message = "<a href=\"http://glpi-project.org/\" title=\"Powered by Teclib and contributors\" class=\"copyright\">";
+      $message .= "GLPI ";
+      // if required, add GLPI version (eg not for login page)
+      if ($withVersion) {
+          $message .= GLPI_VERSION . " ";
+      }
+      $message .= "Copyright (C) 2015-" . GLPI_YEAR . " Teclib' and contributors".
          " - Copyright (C) 2003-2015 INDEPNET Development Team".
          "</a>";
       return $message;
@@ -5669,18 +5710,21 @@ class Html {
 
          foreach ($PLUGIN_HOOKS["add_javascript"] as $plugin => $files) {
             $version = Plugin::getInfo($plugin, 'version');
-            if (is_array($files)) {
-               foreach ($files as $file) {
-                  if (file_exists(GLPI_ROOT."/plugins/$plugin/$file")) {
-                     echo Html::script("plugins/$plugin/$file", ['version' => $version]);
-                  }
-               }
-            } else {
-               if (file_exists(GLPI_ROOT."/plugins/$plugin/$files")) {
-                  echo Html::script("plugins/$plugin/$files", ['version' => $version]);
+            if (!is_array($files)) {
+               $files = [$files];
+            }
+            foreach ($files as $file) {
+               if (file_exists(GLPI_ROOT."/plugins/$plugin/$file")) {
+                  echo Html::script("plugins/$plugin/$file", ['version' => $version]);
+               } else {
+                  Toolbox::logDebug("$file file not found from plugin $plugin!");
                }
             }
          }
+      }
+
+      if (file_exists(GLPI_ROOT."/js/analytics.js")) {
+         echo Html::script("js/analytics.js");
       }
    }
 
@@ -5866,10 +5910,9 @@ class Html {
       if (Config::canUpdate()) {
          $current_mode = $_SESSION['glpi_use_mode'];
          $class = 'debug' . ($current_mode == Session::DEBUG_MODE ? 'on' : 'off');
-         $title = sprintf(
-            __s('Debug mode %1$s'),
-            ($current_mode == Session::DEBUG_MODE ? __('on') : __('off'))
-         );
+         $title = $current_mode == Session::DEBUG_MODE ?
+            __('Debug mode enabled') :
+            __('Debug mode disabled');
          echo "<li id='debug_mode'>";
          echo "<a href='{$CFG_GLPI['root_doc']}/ajax/switchdebug.php' class='fa fa-bug $class'
                 title='$title'>";
@@ -5891,7 +5934,7 @@ class Html {
          ]
       );
       echo "<a href='#' id='showSavedSearchesLink' class='fa fa-star' title=\"".
-             __s('Load a bookmark'). "\">";
+             __s('Load a saved search'). "\">";
       echo "<span class='sr-only'>" . __('Saved searches')  . "</span>";
       echo "</a></li>";
 

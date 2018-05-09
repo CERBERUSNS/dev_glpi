@@ -532,11 +532,13 @@ class MassiveAction {
             } else {
                $actions[$self_pref.'purge']  = _x('button', 'Delete permanently');
             }
+         }
+         if ($candelete) {
             $actions[$self_pref.'restore'] = _x('button', 'Restore');
          }
 
       } else {
-         if (($_SESSION['glpiactiveprofile']['interface'] == 'central')
+         if (Session::getCurrentInterface() == 'central'
              && ($canupdate
                  || (InfoCom::canApplyOn($itemtype)
                      && Infocom::canUpdate()))) {

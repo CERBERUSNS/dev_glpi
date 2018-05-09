@@ -716,6 +716,10 @@ class MailCollector  extends CommonDBTM {
          $tkt["_users_id_requester_notif"]['alternative_email'][0] = $head['from'];
       }
 
+      // Fix author of attachment
+      // Move requester to author of followup
+      $tkt['users_id'] = $tkt['_users_id_requester'];
+
       // Add to and cc as additional observer if user found
       if (count($head['ccs'])) {
          foreach ($head['ccs'] as $cc) {
@@ -809,7 +813,7 @@ class MailCollector  extends CommonDBTM {
       }
       $tkt['content'] = $this->cleanMailContent(Html::entities_deep($tkt['content']), $striptags);
 
-      if ($is_html && !isset($tkt['tickets_id'])) {
+      if ($is_html && !isset($tkt['tickets_id']) && $CFG_GLPI["use_rich_text"]) {
          $tkt['content'] = nl2br($tkt['content']);
       }
 
@@ -838,9 +842,6 @@ class MailCollector  extends CommonDBTM {
             $content        = explode("\n", $tkt['content']);
             $tkt['content'] = "";
             $to_keep        = [];
-
-            // Move requester to author of followup :
-            $tkt['users_id'] = $tkt['_users_id_requester'];
 
             $begin_strip     = -1;
             $end_strip       = -1;
@@ -1843,14 +1844,20 @@ class MailCollector  extends CommonDBTM {
    /**
     * @param $name
     * @param $value  (default 0)
+    * @param $rand
    **/
-   static function showMaxFilesize($name, $value = 0) {
+   static function showMaxFilesize($name, $value = 0, $rand = null) {
 
       $sizes[0] = __('No import');
       for ($index=1; $index<100; $index++) {
          $sizes[$index*1048576] = sprintf(__('%s Mio'), $index);
       }
-      Dropdown::showFromArray($name, $sizes, ['value' => $value]);
+
+      if ($rand === null) {
+         $rand = mt_rand();
+      }
+
+      Dropdown::showFromArray($name, $sizes, ['value' => $value, 'rand' => $rand]);
    }
 
 

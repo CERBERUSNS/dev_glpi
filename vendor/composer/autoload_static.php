@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc499f589ded0056981f1d86e2ee07f74
+class ComposerStaticInit15ec5571390ddec1509e7a2d93087a35
 {
     public static $files = array (
         '383eaff206634a77a1be54e64e6459c7' => __DIR__ . '/..' . '/sabre/uri/lib/functions.php',
@@ -40,6 +40,10 @@ class ComposerStaticInitc499f589ded0056981f1d86e2ee07f74
         'P' => 
         array (
             'Psr\\Container\\' => 14,
+        ),
+        'M' => 
+        array (
+            'Michelf\\' => 8,
         ),
         'I' => 
         array (
@@ -100,6 +104,10 @@ class ComposerStaticInitc499f589ded0056981f1d86e2ee07f74
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'Michelf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/michelf/php-markdown/Michelf',
+        ),
         'Interop\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
@@ -112,13 +120,6 @@ class ComposerStaticInitc499f589ded0056981f1d86e2ee07f74
             'SimplePie' => 
             array (
                 0 => __DIR__ . '/..' . '/simplepie/simplepie/library',
-            ),
-        ),
-        'M' => 
-        array (
-            'Michelf' => 
-            array (
-                0 => __DIR__ . '/..' . '/michelf/php-markdown',
             ),
         ),
     );
@@ -275,6 +276,14 @@ class ComposerStaticInitc499f589ded0056981f1d86e2ee07f74
         'Sabre\\Xml\\Writer' => __DIR__ . '/..' . '/sabre/xml/lib/Writer.php',
         'Sabre\\Xml\\XmlDeserializable' => __DIR__ . '/..' . '/sabre/xml/lib/XmlDeserializable.php',
         'Sabre\\Xml\\XmlSerializable' => __DIR__ . '/..' . '/sabre/xml/lib/XmlSerializable.php',
+        'SebastianBergmann\\Diff\\Chunk' => __DIR__ . '/..' . '/sebastian/diff/src/Chunk.php',
+        'SebastianBergmann\\Diff\\Diff' => __DIR__ . '/..' . '/sebastian/diff/src/Diff.php',
+        'SebastianBergmann\\Diff\\Differ' => __DIR__ . '/..' . '/sebastian/diff/src/Differ.php',
+        'SebastianBergmann\\Diff\\LCS\\LongestCommonSubsequence' => __DIR__ . '/..' . '/sebastian/diff/src/LCS/LongestCommonSubsequence.php',
+        'SebastianBergmann\\Diff\\LCS\\MemoryEfficientImplementation' => __DIR__ . '/..' . '/sebastian/diff/src/LCS/MemoryEfficientLongestCommonSubsequenceImplementation.php',
+        'SebastianBergmann\\Diff\\LCS\\TimeEfficientImplementation' => __DIR__ . '/..' . '/sebastian/diff/src/LCS/TimeEfficientLongestCommonSubsequenceImplementation.php',
+        'SebastianBergmann\\Diff\\Line' => __DIR__ . '/..' . '/sebastian/diff/src/Line.php',
+        'SebastianBergmann\\Diff\\Parser' => __DIR__ . '/..' . '/sebastian/diff/src/Parser.php',
         'SimplePie' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie.php',
         'SimplePie_Author' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Author.php',
         'SimplePie_Cache' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Cache.php',
@@ -611,10 +620,10 @@ class ComposerStaticInitc499f589ded0056981f1d86e2ee07f74
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc499f589ded0056981f1d86e2ee07f74::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc499f589ded0056981f1d86e2ee07f74::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc499f589ded0056981f1d86e2ee07f74::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitc499f589ded0056981f1d86e2ee07f74::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit15ec5571390ddec1509e7a2d93087a35::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit15ec5571390ddec1509e7a2d93087a35::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit15ec5571390ddec1509e7a2d93087a35::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit15ec5571390ddec1509e7a2d93087a35::$classMap;
 
         }, null, ClassLoader::class);
     }

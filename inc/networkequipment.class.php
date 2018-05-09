@@ -217,8 +217,8 @@ class NetworkEquipment extends CommonDBTM {
       // RELATION : networking -> _port -> _wire -> _port -> device
 
       // Evaluate connection in the 2 ways
-      for ($tabend=["networkports_id_1" => "networkports_id_2",
-                         "networkports_id_2" => "networkports_id_1"]; list($enda,$endb)=each($tabend); ) {
+      foreach (["networkports_id_1" => "networkports_id_2",
+                "networkports_id_2" => "networkports_id_1"] as $enda => $endb) {
 
          $sql = "SELECT `itemtype`,
                         GROUP_CONCAT(DISTINCT `items_id`) AS ids
@@ -559,7 +559,7 @@ class NetworkEquipment extends CommonDBTM {
       $tab[] = [
          'id'                 => '11',
          'table'              => 'glpi_devicefirmwares',
-         'field'              => 'id',
+         'field'              => 'version',
          'name'               => _n('Firmware', 'Firmware', 1),
          'forcegroupby'       => true,
          'usehaving'          => true,

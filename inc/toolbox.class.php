@@ -95,7 +95,7 @@ class Toolbox {
 
    static function shortcut($str, $shortcut) {
 
-      $pos = self::strpos(self::strtolower($str), $shortcut);
+      $pos = self::strpos(self::strtolower($str), self::strtolower($shortcut));
       if ($pos !== false) {
          return self::substr($str, 0, $pos).
                 "<u>". self::substr($str, $pos, 1)."</u>".
@@ -354,19 +354,28 @@ class Toolbox {
                                   ? $value : str_replace($out, $in, $value)));
 
       // revert unclean inside <pre>
-      $count = preg_match_all('/(<pre[^>]*>)(.*?)(<\/pre>)/is', $value, $matches);
-      for ($i = 0; $i < $count; ++$i) {
-         $complete       = $matches[0][$i];
-         $cleaned        = self::clean_cross_side_scripting_deep($matches[2][$i]);
-         $cleancomplete  = $matches[1][$i].$cleaned.$matches[3][$i];
-         $value          = str_replace($complete, $cleancomplete, $value);
+      if (!is_array($value)) {
+         $count = preg_match_all('/(<pre[^>]*>)(.*?)(<\/pre>)/is', $value, $matches);
+         for ($i = 0; $i < $count; ++$i) {
+            $complete       = $matches[0][$i];
+            $cleaned        = self::clean_cross_side_scripting_deep($matches[2][$i]);
+            $cleancomplete  = $matches[1][$i].$cleaned.$matches[3][$i];
+            $value          = str_replace($complete, $cleancomplete, $value);
+         }
+
+         $config                      = ['safe'=>1];
+         $config["elements"]          = "*+iframe";
+         $config["direct_list_nest"]  = 1;
+
+         $value                       = htmLawed($value, $config);
+
+         // Special case : remove the 'denied:' for base64 img in case the base64 have characters
+         // combinaison introduce false positive
+         foreach (['png', 'gif', 'jpg', 'jpeg'] as $imgtype) {
+            $value = str_replace('src="denied:data:image/'.$imgtype.';base64,',
+                  'src="data:image/'.$imgtype.';base64,', $value);
+         }
       }
-
-      $config                      = ['safe'=>1];
-      $config["elements"]          = "*+iframe";
-      $config["direct_list_nest"]  = 1;
-
-      $value                       = htmLawed($value, $config);
 
       return $value;
    }
@@ -1556,6 +1565,20 @@ class Toolbox {
     * @return content of the page (or empty)
    **/
    static function getURLContent ($url, &$msgerr = null, $rec = 0) {
+      $content = self::callCurl($url);
+      return $content;
+   }
+
+   /**
+    * Executes a curl call
+    *
+    * @param string $url    URL to retrieve
+    * @param array  $eopts  Extra curl opts
+    * @param string $msgerr set if problem encountered (default NULL)
+    *
+    * @return string
+    */
+   public static function callCurl($url, array $eopts = [], &$msgerr = null) {
       global $CFG_GLPI;
 
       $content = "";
@@ -1576,24 +1599,28 @@ class Toolbox {
          CURLOPT_URL             => $url,
          CURLOPT_USERAGENT       => "GLPI/".trim($CFG_GLPI["version"]),
          CURLOPT_RETURNTRANSFER  => 1
-      ];
+      ] + $eopts;
 
       if (!empty($CFG_GLPI["proxy_name"])) {
          // Connection using proxy
          $opts += [
             CURLOPT_PROXY           => $CFG_GLPI['proxy_name'],
             CURLOPT_PROXYPORT       => $CFG_GLPI['proxy_port'],
-            CURLOPT_PROXYTYPE       => CURLPROXY_HTTP,
-            CURLOPT_HTTPPROXYTUNNEL => 1
+            CURLOPT_PROXYTYPE       => CURLPROXY_HTTP
          ];
 
          if (!empty($CFG_GLPI["proxy_user"])) {
             $opts += [
-               CURLOPT_PROXYAUTH => CURLAUTH_BASIC,
-               CURLOPT_PROXYUSERPWD => $CFG_GLPI["proxy_user"] . ":" . self::decrypt($CFG_GLPI["proxy_passwd"], GLPIKEY)
+               CURLOPT_PROXYAUTH    => CURLAUTH_BASIC,
+               CURLOPT_PROXYUSERPWD => $CFG_GLPI["proxy_user"] . ":" . self::decrypt($CFG_GLPI["proxy_passwd"], GLPIKEY),
             ];
          }
 
+         if ($defaultport == 443) {
+            $opts += [
+               CURLOPT_HTTPPROXYTUNNEL => 1
+            ];
+         }
       }
 
       curl_setopt_array($ch, $opts);
@@ -1620,6 +1647,9 @@ class Toolbox {
 
       if (empty($content)) {
          $msgerr = __('No data available on the web site');
+      }
+      if (!empty($msgerr)) {
+         Toolbox::logDebug($msgerr);
       }
       return $content;
    }
@@ -1687,14 +1717,13 @@ class Toolbox {
 
       if (!empty($where)) {
 
-         if (isset($_SESSION["glpiactiveprofile"]["interface"])
-             && !empty($_SESSION["glpiactiveprofile"]["interface"])) {
+         if (Session::getCurrentInterface()) {
             $decoded_where = rawurldecode($where);
             // redirect to URL : URL must be rawurlencoded
             if ($link = preg_match('/(https?:\/\/[^\/]+)\/.+/', $decoded_where, $matches)) {
                if ($matches[1] !== $CFG_GLPI['url_base']) {
                   Session::addMessageAfterRedirect('Redirection failed');
-                  if ($_SESSION["glpiactiveprofile"]["interface"] === "helpdesk") {
+                  if (Session::getCurrentInterface() === "helpdesk") {
                      Html::redirect($CFG_GLPI["root_doc"]."/front/helpdesk.public.php");
                   } else {
                      Html::redirect($CFG_GLPI["root_doc"]."/front/central.php");
@@ -1716,7 +1745,7 @@ class Toolbox {
                $forcetab = 'forcetab='.$data[2];
             }
 
-            switch ($_SESSION["glpiactiveprofile"]["interface"]) {
+            switch (Session::getCurrentInterface()) {
                case "helpdesk" :
                   switch (strtolower($data[0])) {
                      // Use for compatibility with old name
@@ -2535,10 +2564,14 @@ class Toolbox {
                // Add only image files : try to detect mime type
                if ($document->getFromDB($id)
                    && strpos($document->fields['mime'], 'image/') !== false) {
-                  // Replace tags by image in textarea
+                  // append ticket reference in image link
                   $ticket_url_param = "";
                   if ($item instanceof Ticket) {
                      $ticket_url_param = "&tickets_id=".$item->fields['id'];
+                  }
+                  if (isset($item->input['_job'])
+                      && $item->input['_job'] instanceof Ticket) {
+                     $ticket_url_param = "&tickets_id=".$item->input['_job']->fields['id'];
                   }
                   $img = "<img alt='".$image['tag']."' src='".$CFG_GLPI['root_doc'].
                           "/front/document.send.php?docid=".$id.$ticket_url_param."'/>";
@@ -2570,7 +2603,8 @@ class Toolbox {
 
                      // replace image
                      $new_image =  Html::convertTagFromRichTextToImageTag($image['tag'],
-                                                                          $width, $height);
+                                                                          $width, $height,
+                                                                          true, $ticket_url_param);
                      $content_text = preg_replace("/<img([^>]*?)(".$image['tag'].")([^<]*?)>/Uim",
                                                   $new_image,
                                                   Html::entity_decode_deep($content_text));
@@ -2849,4 +2883,22 @@ class Toolbox {
          && (!defined('TU_USER') || defined('CACHED_TESTS'));
    }
 
+   /**
+    * Get HTML content to display (cleaned)
+    *
+    * @since 9.1.8
+    *
+    * @param string $content Content to display
+    *
+    * @return string
+    */
+   public static function getHtmlToDisplay($content) {
+      $content = Toolbox::unclean_cross_side_scripting_deep(
+         Html::entity_decode_deep(
+            $content
+         )
+      );
+      $content = nl2br(Html::clean($content, false, 1));
+      return $content;
+   }
 }

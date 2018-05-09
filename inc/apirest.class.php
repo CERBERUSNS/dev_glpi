@@ -55,6 +55,23 @@ class APIRest extends API {
       return __('Rest API');
    }
 
+   /**
+    * Upload and validate files from request and append to $this->parameters['input']
+    *
+    * @return void
+    */
+   public function manageUploadedFiles() {
+      foreach ($_FILES as $filename => $files) {
+         $upload_result
+            = GLPIUploadHandler::uploadFiles(['name'           => $filename,
+                                              'print_response' => false]);
+         foreach ($upload_result as $uresult) {
+            $this->parameters['input']->_filename[] = $uresult[0]->name;
+            $this->parameters['input']->_prefix_filename[] = $uresult[0]->prefix;
+         }
+         $this->parameters['upload_result'][] = $upload_result;
+      }
+   }
 
    /**
     * Parse url and http body to retrieve :
@@ -99,6 +116,8 @@ class APIRest extends API {
 
       // retrieve session (if exist)
       $this->retrieveSession();
+      $this->initApi();
+      $this->manageUploadedFiles();
 
       // retrieve param who permit session writing
       if (isset($this->parameters['session_write'])) {
@@ -205,8 +224,8 @@ class APIRest extends API {
          switch ($this->verb) {
             default:
             case "GET" : // retrieve item(s)
-               if (($id > 0)
-                   || (($id == 0) && ($itemtype == "Entity"))) {
+               if ($id > 0
+                   || ($id !== false && $id == 0 && $itemtype == "Entity")) {
                   $response = $this->getItem($itemtype, $id, $this->parameters);
                   if (isset($response['date_mod'])) {
                      $datemod = strtotime($response['date_mod']);
@@ -419,16 +438,6 @@ class APIRest extends API {
          $parameters['upload_result'] = [];
          $parameters['input']->_filename = [];
          $parameters['input']->_prefix_filename = [];
-         foreach ($_FILES as $filename => $files) {
-            $upload_result
-               = GLPIUploadHandler::uploadFiles(['name'           => $filename,
-                                                 'print_response' => false]);
-            foreach ($upload_result as $uresult) {
-               $parameters['input']->_filename[] = $uresult[0]->name;
-               $parameters['input']->_prefix_filename[] = $uresult[0]->prefix;
-            }
-            $parameters['upload_result'][] = $upload_result;
-         }
 
       } else if (strpos($content_type, "application/x-www-form-urlencoded") !== false) {
          parse_str($body, $postvars);
@@ -446,6 +455,13 @@ class APIRest extends API {
       if (function_exists('getallheaders')) {
          //apache specific
          $headers = getallheaders();
+         if (false !== $headers && count($headers) > 0) {
+            $fixedHeaders = [];
+            foreach ($headers as $key => $value) {
+               $fixedHeaders[ucwords(strtolower($key), '-')] = $value;
+            }
+            $headers = $fixedHeaders;
+         }
       } else {
          // other servers
          foreach ($_SERVER as $server_key => $server_value) {
@@ -481,6 +497,16 @@ class APIRest extends API {
       // try to retrieve app_token in header
       if (isset($headers['App-Token'])) {
          $parameters['app_token'] = $headers['App-Token'];
+      }
+
+      // check boolean parameters
+      foreach ($parameters as $key => &$parameter) {
+         if ($parameter === "true") {
+            $parameter = true;
+         }
+         if ($parameter === "false") {
+            $parameter = false;
+         }
       }
 
       $this->parameters = $parameters;

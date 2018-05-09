@@ -19,5 +19,6 @@ return array(
     'Sabre\\VObject\\' => array($vendorDir . '/sabre/vobject/lib'),
     'Sabre\\Uri\\' => array($vendorDir . '/sabre/uri/lib'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
+    'Michelf\\' => array($vendorDir . '/michelf/php-markdown/Michelf'),
     'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
 );

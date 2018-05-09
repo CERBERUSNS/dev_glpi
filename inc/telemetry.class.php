@@ -144,6 +144,15 @@ class Telemetry extends CommonGLPI {
       // check if host is present (do no throw php warning in contrary of get_headers)
       if (filter_var(gethostbyname(parse_url($CFG_GLPI['url_base'], PHP_URL_HOST)),
           FILTER_VALIDATE_IP)) {
+
+          // Issue #3180 - disable SSL certificate validation (wildcard, self-signed)
+          stream_context_set_default([
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                ]
+            ]);
+
          $headers = get_headers($CFG_GLPI['url_base']);
       }
 
@@ -199,12 +208,15 @@ class Telemetry extends CommonGLPI {
     * @return array
     */
    static public function grabOsInfos() {
+      $distro = false;
+      if (file_exists('/etc/redhat-release')) {
+         $distro = preg_replace('/\s+$/S', '', file_get_contents('/etc/redhat-release'));
+      }
       $os = [
          'family'       => php_uname('s'),
-         'distribution' => '',
+         'distribution' => ($distro ?: ''),
          'version'      => php_uname('r')
       ];
-
       return $os;
    }
 
@@ -255,43 +267,17 @@ class Telemetry extends CommonGLPI {
     * @return void
     */
    static public function cronTelemetry($task) {
-      global $CFG_GLPI;
-
       $data = self::getTelemetryInfos();
       $infos = json_encode(['data' => $data]);
 
-      $uri = GLPI_TELEMETRY_URI . '/telemetry';
-      $ch = curl_init($uri);
+      $url = GLPI_TELEMETRY_URI . '/telemetry';
       $opts = [
-         CURLOPT_URL             => $uri,
-         CURLOPT_USERAGENT       => "GLPI/".trim($CFG_GLPI["version"]),
-         CURLOPT_RETURNTRANSFER  => 1,
          CURLOPT_POSTFIELDS      => $infos,
          CURLOPT_HTTPHEADER      => ['Content-Type:application/json']
       ];
 
-      if (!empty($CFG_GLPI["proxy_name"])) {
-         // Connection using proxy
-         $opts += [
-            CURLOPT_PROXY           => $CFG_GLPI['proxy_name'],
-            CURLOPT_PROXYPORT       => $CFG_GLPI['proxy_port'],
-            CURLOPT_PROXYTYPE       => CURLPROXY_HTTP,
-            CURLOPT_HTTPPROXYTUNNEL => 1
-         ];
-
-         if (!empty($CFG_GLPI["proxy_user"])) {
-            $opts += [
-               CURLOPT_PROXYAUTH => CURLAUTH_BASIC,
-               CURLOPT_PROXYUSERPWD => $CFG_GLPI["proxy_user"] . ":" . self::decrypt($CFG_GLPI["proxy_passwd"], GLPIKEY)
-            ];
-         }
-
-      }
-
-      curl_setopt_array($ch, $opts);
-      $content = json_decode(curl_exec($ch));
-      $errstr = curl_error($ch);
-      curl_close($ch);
+      $errstr = null;
+      $content = json_decode(Toolbox::callCurl($url, $opts, $errstr));
 
       if ($content && property_exists($content, 'message')) {
          //all is OK!
@@ -303,7 +289,6 @@ class Telemetry extends CommonGLPI {
          }
          throw new \RuntimeException($message);
       }
-
    }
 
    /**

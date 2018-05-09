@@ -253,11 +253,11 @@ class Dropdown {
                                                   $paramscomment, false);
       }
       $output .= Ajax::commonDropdownUpdateItem($params, false);
+      $output .= "</span>";
       if ($params['display']) {
          echo $output;
          return $params['rand'];
       }
-      $output .= "</span>";
       return $output;
    }
 
@@ -1463,7 +1463,12 @@ class Dropdown {
          }
       }
       if (($p['value'] < $p['min']) && !isset($p['toadd'][$p['value']])) {
-         $p['value'] = $p['min'];
+         $min = $p['min'];
+
+         while (isset($p['used'][$min])) {
+            ++$min;
+         }
+         $p['value'] = $min;
       }
 
       $field_id = Html::cleanId("dropdown_".$myname.$p['rand']);
@@ -1922,7 +1927,7 @@ class Dropdown {
                $output .= "</optgroup>";
             } else {
                if (!isset($param['used'][$key])) {
-                  $output .= "<option value='".$key."'";
+                  $output .= "<option value='".Html::entities_deep($key)."'";
                   // Do not use in_array : trouble with 0 and empty value
                   foreach ($param['values'] as $value) {
                      if (strcmp($key, $value)===0) {

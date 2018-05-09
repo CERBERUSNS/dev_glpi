@@ -69,14 +69,14 @@ class Reminder extends CommonDBVisible {
    static function canCreate() {
 
       return (Session::haveRight(self::$rightname, CREATE)
-              || ($_SESSION['glpiactiveprofile']['interface'] != 'helpdesk'));
+              || Session::getCurrentInterface() != 'helpdesk');
    }
 
 
    static function canView() {
 
       return (Session::haveRight(self::$rightname, READ)
-              || ($_SESSION['glpiactiveprofile']['interface'] != 'helpdesk'));
+              || Session::getCurrentInterface() != 'helpdesk');
    }
 
 
@@ -121,7 +121,7 @@ class Reminder extends CommonDBVisible {
     * for personnal reminder
    **/
    static function canUpdate() {
-      return ($_SESSION['glpiactiveprofile']['interface'] != 'helpdesk');
+      return (Session::getCurrentInterface() != 'helpdesk');
    }
 
 
@@ -130,7 +130,7 @@ class Reminder extends CommonDBVisible {
     * for personnal reminder
    **/
    static function canPurge() {
-      return ($_SESSION['glpiactiveprofile']['interface'] != 'helpdesk');
+      return (Session::getCurrentInterface() != 'helpdesk');
    }
 
 
@@ -838,6 +838,9 @@ class Reminder extends CommonDBVisible {
 
       $readpub    = $readpriv = "";
 
+      if ($options['genical']) {
+         $_SESSION["glpiactiveprofile"][static::$rightname] = READ;
+      }
       $joinstoadd = self::addVisibilityJoins(true);
 
       // See public reminder ?
@@ -929,15 +932,18 @@ class Reminder extends CommonDBVisible {
                   $interv[$key]["users_id"]   = $data["users_id"];
                   $interv[$key]["state"]      = $data["state"];
                   $interv[$key]["state"]      = $data["state"];
-                  $interv[$key]["url"]        = $CFG_GLPI["root_doc"]."/front/reminder.form.php?id=".
-                                                                      $data['id'];
-                  $interv[$key]["ajaxurl"]    = $CFG_GLPI["root_doc"]."/ajax/planning.php".
-                                                                      "?action=edit_event_form".
-                                                                      "&itemtype=Reminder".
-                                                                      "&id=".$data['id'].
-                                                                      "&url=".$interv[$key]["url"];
-
-                  $interv[$key]["editable"]   = $reminder->canUpdateItem();
+                  if (!$options['genical']) {
+                     $interv[$key]["url"] = Reminder::getFormURLWithID($data['id']);
+                  } else {
+                     $interv[$key]["url"] = $CFG_GLPI["url_base"].
+                                            Reminder::getFormURLWithID($data['id'], false);
+                  }
+                  $interv[$key]["ajaxurl"]  = $CFG_GLPI["root_doc"]."/ajax/planning.php".
+                                              "?action=edit_event_form".
+                                              "&itemtype=Reminder".
+                                              "&id=".$data['id'].
+                                              "&url=".$interv[$key]["url"];
+                  $interv[$key]["editable"] = $reminder->canUpdateItem();
                }
             }
          }
@@ -1043,7 +1049,7 @@ class Reminder extends CommonDBVisible {
       if ($personal) {
 
          /// Personal notes only for central view
-         if ($_SESSION['glpiactiveprofile']['interface'] == 'helpdesk') {
+         if (Session::getCurrentInterface() == 'helpdesk') {
             return false;
          }
 
@@ -1066,7 +1072,7 @@ class Reminder extends CommonDBVisible {
 
          $restrict_user = '1';
          // Only personal on central so do not keep it
-         if ($_SESSION['glpiactiveprofile']['interface'] == 'central') {
+         if (Session::getCurrentInterface() == 'central') {
             $restrict_user = "`glpi_reminders`.`users_id` <> '$users_id'";
          }
 
@@ -1078,7 +1084,7 @@ class Reminder extends CommonDBVisible {
                          AND ".self::addVisibilityRestrict()."
                    ORDER BY `glpi_reminders`.`name`";
 
-         if ($_SESSION['glpiactiveprofile']['interface'] != 'helpdesk') {
+         if (Session::getCurrentInterface() != 'helpdesk') {
             $titre = "<a href=\"".$CFG_GLPI["root_doc"]."/front/reminder.php\">".
                        _n('Public reminder', 'Public reminders', Session::getPluralNumber())."</a>";
          } else {

@@ -1023,7 +1023,7 @@ td { }
 
 
 /*.tab_cadre_fixe tr, .tab_cadre_fixe td { */
-/*	background-color: transparent; */
+/*   background-color: transparent; */
 /*}*/
 
 
@@ -1498,7 +1498,7 @@ td.rotate {
 }
 
 .firstbloc {
-   margin-bottom: 20px;
+   margin: 10px 0 20px 0;
 }
 
 
@@ -3343,7 +3343,6 @@ a.copyright {
    margin-right: 0;
    margin-left: 160px;
    word-wrap: break-word;
-   white-space: pre-wrap;
 }
 
 .timeline_history .right .h_content {
@@ -4345,9 +4344,7 @@ input[type=checkbox].toggle_comments:checked ~ ul {
       display: block;
    }
 
-   .select2-focusser,
-   .select2-search,
-   .select2-search input {
+   .select2-focusser {
        display: none !important;
    }
 

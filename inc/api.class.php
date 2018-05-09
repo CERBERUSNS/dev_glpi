@@ -43,6 +43,7 @@ abstract class API extends CommonGLPI {
    protected $session_write = false;
 
    static $api_url = "";
+   static $content_type = "application/json";
    protected $format;
    protected $iptxt         = "";
    protected $ipnum         = "";
@@ -75,6 +76,12 @@ abstract class API extends CommonGLPI {
     */
    abstract protected function returnResponse($response, $code, $additionalheaders);
 
+   /**
+    * Upload and validate files from request and append to $this->parameters['input']
+    *
+    * @return void
+    */
+   abstract protected function manageUploadedFiles();
 
    /**
     * Constructor
@@ -84,8 +91,17 @@ abstract class API extends CommonGLPI {
     *
     * @return void
     */
-   public function __construct() {
+   public function initApi() {
       global $CFG_GLPI, $DB;
+
+      // Load GLPI configuration
+      include_once (GLPI_ROOT . '/inc/includes.php');
+      $variables = get_defined_vars();
+      foreach ($variables as $var => $value) {
+         if ($var === strtoupper($var)) {
+            $GLOBALS[$var] = $value;
+         }
+      }
 
       // construct api url
       self::$api_url = trim($CFG_GLPI['url_base_api'], "/");
@@ -120,7 +136,7 @@ abstract class API extends CommonGLPI {
       }
       $found_clients = $apiclient->find("`is_active` = '1' $where_ip");
       if (count($found_clients) <= 0) {
-         $this->returnError(__("There isn't an active api client matching your ip adress in the configuration").
+         $this->returnError(__("There isn't an active API client matching your IP address in the configuration").
                             " (".$this->iptxt.")",
                             "", "ERROR_NOT_ALLOWED_IP", false);
       }
@@ -252,25 +268,12 @@ abstract class API extends CommonGLPI {
          } else if (file_exists(GLPI_ROOT . '/config/config_path.php')) { // For compatibility, deprecated
             include_once (GLPI_ROOT . '/config/config_path.php');
          }
-         if (!defined("GLPI_SESSION_DIR")) {
-            define("GLPI_SESSION_DIR", GLPI_ROOT . "/files/_sessions");
-         }
 
          if ($session!=$current && !empty($current)) {
             session_destroy();
          }
          if ($session!=$current && !empty($session)) {
-            if (ini_get("session.save_handler")=="files") {
-               session_save_path(GLPI_SESSION_DIR);
-            }
             session_id($session);
-            session_start();
-
-            // Define current time for sync of action timing
-            $_SESSION["glpi_currenttime"] = date("Y-m-d H:i:s");
-            $_SESSION['glpi_use_mode'] = Session::NORMAL_MODE;
-
-            Session::loadLanguage();
          }
       }
    }
@@ -283,22 +286,29 @@ abstract class API extends CommonGLPI {
     *   - 'entities_id': (default 'all') ID of the new active entity ("all" = load all possible entities). Optionnal
     *   - 'is_recursive': (default false) Also display sub entities of the active entity.  Optionnal
     *
-    * @return boolean
+    * @return array|bool
     */
    protected function changeActiveEntities($params = []) {
 
       $this->initEndpoint();
 
       if (!isset($params['entities_id'])) {
-         $params['entities_id'] = 'all';
+         $entities_id = 'all';
+      } else {
+         $entities_id = intval($params['entities_id']);
       }
 
       if (!isset($params['is_recursive'])) {
          $params['is_recursive'] = false;
+      } else if (!is_bool($params['is_recursive'])) {
+         return $this->returnError();
       }
 
-      return Session::changeActiveEntities(intval($params['entities_id']),
-                                           $params['is_recursive']);
+      if (!Session::changeActiveEntities($entities_id, $params['is_recursive'])) {
+         return $this->returnError();
+      }
+
+      return true;
    }
 
 
@@ -1083,14 +1093,15 @@ abstract class API extends CommonGLPI {
          foreach ($params['searchText']  as $filter_field => $filter_value) {
             if (!empty($filter_value)) {
                $search = Search::makeTextSearch($filter_value);
-               $where.= " AND (`$table`.`$filter_field` $search
-                               OR `$table`.`id` $search)";
+               $where.= " AND (`$table`.`$filter_field` $search)";
             }
          }
       }
 
       // filter with entity
-      if ($item->isEntityAssign()) {
+      if ($item->isEntityAssign()
+          // some CommonDBChild classes may not have entities_id fields and isEntityAssign still return true (like TicketTemplateMandatoryField)
+          && array_key_exists('entities_id', $item->fields)) {
          $where.= " AND (". getEntitiesRestrictRequest("",
                                              $itemtype::getTable(),
                                              '',
@@ -1932,8 +1943,13 @@ abstract class API extends CommonGLPI {
          $this->parameters['app_token'] = "";
       }
       if (!$this->apiclients_id = array_search($this->parameters['app_token'], $this->app_tokens)) {
-         $this->returnError(__("missing parameter app_token"), 400,
-                            "ERROR_APP_TOKEN_PARAMETERS_MISSING");
+         if ($this->parameters['app_token'] != "") {
+            $this->returnError(__("parameter app_token seems wrong"), 400,
+                               "ERROR_WRONG_APP_TOKEN_PARAMETER");
+         } else {
+            $this->returnError(__("missing parameter app_token"), 400,
+                               "ERROR_APP_TOKEN_PARAMETERS_MISSING");
+         }
       }
    }
 
@@ -2014,6 +2030,7 @@ abstract class API extends CommonGLPI {
     * @return array  of messages
     */
    private function getGlpiLastMessage() {
+      global $DEBUG_SQL;
 
       $all_messages             = [];
 
@@ -2031,6 +2048,12 @@ abstract class API extends CommonGLPI {
          foreach ($messages as $message) {
             $all_messages[] = Html::clean($message);
          }
+      }
+
+      // get sql errors
+      if (count($all_messages) <= 0
+          && $DEBUG_SQL['errors'] !== null) {
+         $all_messages = $DEBUG_SQL['errors'];
       }
 
       if (!end($all_messages)) {
@@ -2064,7 +2087,7 @@ abstract class API extends CommonGLPI {
    protected function header($html = false, $title = "") {
 
       // Send UTF8 Headers
-      $content_type = "application/json";
+      $content_type = static::$content_type;
       if ($html) {
          $content_type = "text/html";
       }
@@ -2225,7 +2248,7 @@ abstract class API extends CommonGLPI {
                     && !in_array($itemtype, $CFG_GLPI["itemdevicenetworkcard_types"]))) {
                continue;
             }
-            $hclasses[] = $device_type;
+            $hclasses[] = "Item_".$device_type;
          }
       }
 

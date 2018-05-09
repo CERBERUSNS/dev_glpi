@@ -137,8 +137,7 @@ class KnowbaseItem extends CommonDBVisible {
 
       // Personal knowbase or visibility and write access
       return (Session::haveRight(self::$rightname, self::KNOWBASEADMIN)
-              || (isset($_SESSION["glpiactiveprofile"])
-                  && $_SESSION["glpiactiveprofile"]["interface"] == "central"
+              || (Session::getCurrentInterface() == "central"
                   && $this->fields['users_id'] == Session::getLoginUserID())
               || ((($this->fields["is_faq"] && Session::haveRight(self::$rightname, self::PUBLISHFAQ))
                    || (!$this->fields["is_faq"]
@@ -167,8 +166,7 @@ class KnowbaseItem extends CommonDBVisible {
 
       $dir = ($full ? $CFG_GLPI['root_doc'] : '');
 
-      if (isset($_SESSION['glpiactiveprofile'])
-          && ($_SESSION['glpiactiveprofile']['interface'] == "central")) {
+      if (Session::getCurrentInterface() == "central") {
          return "$dir/front/knowbaseitem.php";
       }
       return "$dir/front/helpdesk.faq.php";
@@ -452,7 +450,7 @@ class KnowbaseItem extends CommonDBVisible {
 
       $restrict = '';
       if (Session::getLoginUserID()) {
-         $restrict = "(`glpi_knowbaseitems_users`.`users_id` = '".Session::getLoginUserID()."' ";
+         $restrict = "(`glpi_knowbaseitems`.`users_id` = '".Session::getLoginUserID()."' ";
 
          // Users
          $restrict .= " OR `glpi_knowbaseitems_users`.`users_id` = '".Session::getLoginUserID()."' ";
@@ -500,6 +498,12 @@ class KnowbaseItem extends CommonDBVisible {
     * @return array
     */
    static public function getVisibilityCriteria($forceall = false) {
+      if (Session::haveRight(self::$rightname, self::KNOWBASEADMIN)) {
+         return [
+            'LEFT JOIN' => [],
+            'WHERE' => [],
+         ];
+      }
 
       $join = [];
       $where = [];
@@ -883,7 +887,7 @@ class KnowbaseItem extends CommonDBVisible {
       $linkusers_id = true;
       // show item : question and answer
       if (((Session::getLoginUserID() === false) && $CFG_GLPI["use_public_faq"])
-          || ($_SESSION["glpiactiveprofile"]["interface"] == "helpdesk")
+          || (Session::getCurrentInterface() == "helpdesk")
           || !User::canView()) {
          $linkusers_id = false;
       }

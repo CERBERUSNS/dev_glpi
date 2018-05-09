@@ -1791,13 +1791,13 @@ abstract class CommonITILObject extends CommonDBTM {
 
       if (($p['showtype'] == 'search')
           || $p['withmajor']) {
-        // $values[6] = static::getPriorityName(6);
+         $values[6] = static::getPriorityName(6);
       }
-      //$values[5] = static::getPriorityName(5);
+      $values[5] = static::getPriorityName(5);
       $values[4] = static::getPriorityName(4);
       $values[3] = static::getPriorityName(3);
       $values[2] = static::getPriorityName(2);
-      //$values[1] = static::getPriorityName(1);
+      $values[1] = static::getPriorityName(1);
 
       return Dropdown::showFromArray($p['name'], $values, $p);
    }
@@ -2850,8 +2850,7 @@ abstract class CommonITILObject extends CommonDBTM {
       ];
 
       if (!Session::isCron() // no filter for cron
-          && isset($_SESSION['glpiactiveprofile']['interface'])
-          && ($_SESSION['glpiactiveprofile']['interface'] == 'helpdesk')) {
+          && Session::getCurrentInterface() == 'helpdesk') {
          $newtab['condition']         = "`is_helpdeskvisible`";
       }
       $tab[] = $newtab;
@@ -2888,8 +2887,7 @@ abstract class CommonITILObject extends CommonDBTM {
 
       // Filter search fields for helpdesk
       if (!Session::isCron() // no filter for cron
-          && (!isset($_SESSION['glpiactiveprofile']['interface'])
-              || ($_SESSION['glpiactiveprofile']['interface'] == 'helpdesk'))) {
+          && Session::getCurrentInterface() != 'central') {
          // last updater no search
          $newtab['nosearch'] = true;
       }
@@ -2984,7 +2982,7 @@ abstract class CommonITILObject extends CommonDBTM {
       ];
 
       $newtab = [
-         'id'                 => '4',
+         'id'                 => '4', // Also in Ticket_User::post_addItem() and Log::getHistoryData()
          'table'              => 'glpi_users',
          'field'              => 'name',
          'datatype'           => 'dropdown',
@@ -3004,14 +3002,13 @@ abstract class CommonITILObject extends CommonDBTM {
       ];
 
       if (!Session::isCron() // no filter for cron
-          && isset($_SESSION['glpiactiveprofile']['interface'])
-          && $_SESSION['glpiactiveprofile']['interface'] == 'helpdesk') {
+          && Session::getCurrentInterface() == 'helpdesk') {
          $newtab['right']       = 'id';
       }
       $tab[] = $newtab;
 
       $newtab = [
-         'id'                 => '71',
+         'id'                 => '71',  // Also in Group_Ticket::post_addItem() and Log::getHistoryData()
          'table'              => 'glpi_groups',
          'field'              => 'completename',
          'datatype'           => 'dropdown',
@@ -3031,8 +3028,7 @@ abstract class CommonITILObject extends CommonDBTM {
       ];
 
       if (!Session::isCron() // no filter for cron
-          && isset($_SESSION['glpiactiveprofile']['interface'])
-          && $_SESSION['glpiactiveprofile']['interface'] == 'helpdesk') {
+          && Session::getCurrentInterface() == 'helpdesk') {
          $newtab['condition']       .= " AND `id` IN (".implode(",", $_SESSION['glpigroups']).")";
       }
       $tab[] = $newtab;
@@ -3048,8 +3044,7 @@ abstract class CommonITILObject extends CommonDBTM {
       ];
 
       if (!Session::isCron() // no filter for cron
-          && isset($_SESSION['glpiactiveprofile']['interface'])
-          && $_SESSION['glpiactiveprofile']['interface'] == 'helpdesk') {
+          && Session::getCurrentInterface() == 'helpdesk') {
          $newtab['right']       = 'id';
       }
       $tab[] = $newtab;
@@ -3060,7 +3055,7 @@ abstract class CommonITILObject extends CommonDBTM {
       ];
 
       $tab[] = [
-         'id'                 => '66',
+         'id'                 => '66', // Also in Ticket_User::post_addItem() and Log::getHistoryData()
          'table'              => 'glpi_users',
          'field'              => 'name',
          'datatype'           => 'dropdown',
@@ -3080,7 +3075,7 @@ abstract class CommonITILObject extends CommonDBTM {
       ];
 
       $tab[] = [
-         'id'                 => '65',
+         'id'                 => '65', // Also in Group_Ticket::post_addItem() and Log::getHistoryData()
          'table'              => 'glpi_groups',
          'field'              => 'completename',
          'datatype'           => 'dropdown',
@@ -3105,7 +3100,7 @@ abstract class CommonITILObject extends CommonDBTM {
       ];
 
       $tab[] = [
-         'id'                 => '5',
+         'id'                 => '5', // Also in Ticket_User::post_addItem() and Log::getHistoryData()
          'table'              => 'glpi_users',
          'field'              => 'name',
          'datatype'           => 'dropdown',
@@ -3125,7 +3120,7 @@ abstract class CommonITILObject extends CommonDBTM {
       ];
 
       $tab[] = [
-         'id'                 => '6',
+         'id'                 => '6', // Also in Supplier_Ticket::post_addItem() and Log::getHistoryData()
          'table'              => 'glpi_suppliers',
          'field'              => 'name',
          'datatype'           => 'dropdown',
@@ -3144,7 +3139,7 @@ abstract class CommonITILObject extends CommonDBTM {
       ];
 
       $tab[] = [
-         'id'                 => '8',
+         'id'                 => '8', // Also in Group_Ticket::post_addItem() and Log::getHistoryData()
          'table'              => 'glpi_groups',
          'field'              => 'completename',
          'datatype'           => 'dropdown',
@@ -3600,7 +3595,7 @@ abstract class CommonITILObject extends CommonDBTM {
          // display opened tickets for user
          if (($type == CommonITILActor::REQUESTER)
              && ($options["_users_id_".$typename] > 0)
-             && ($_SESSION["glpiactiveprofile"]["interface"] != "helpdesk")) {
+             && (Session::getCurrentInterface() != "helpdesk")) {
 
             $options2['criteria'][0]['field']      = 4; // users_id
             $options2['criteria'][0]['searchtype'] = 'equals';
@@ -3806,7 +3801,9 @@ abstract class CommonITILObject extends CommonDBTM {
 
       if ($ID
           && $can_admin
-          && (!$is_hidden['_users_id_requester'] || !$is_hidden['_groups_id_requester'])) {
+          && (!$is_hidden['_users_id_requester'] || !$is_hidden['_groups_id_requester'])
+          && !in_array($this->fields['status'], $this->getClosedStatusArray())
+      ) {
          $rand_requester = mt_rand();
          echo "&nbsp;";
          echo "<span class='fa fa-plus pointer' title=\"".__s('Add')."\"
@@ -3911,7 +3908,9 @@ abstract class CommonITILObject extends CommonDBTM {
 
       if ($ID
           && $can_admin
-          && (!$is_hidden['_users_id_observer'] || !$is_hidden['_groups_id_observer'])) {
+          && (!$is_hidden['_users_id_observer'] || !$is_hidden['_groups_id_observer'])
+          && !in_array($this->fields['status'], $this->getClosedStatusArray())
+      ) {
          $rand_observer = mt_rand();
 
          echo "&nbsp;";

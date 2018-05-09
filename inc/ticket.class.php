@@ -278,7 +278,9 @@ class Ticket extends CommonITILObject {
 
    function canAssign() {
 
-      if (isset($this->fields['is_deleted']) && ($this->fields['is_deleted'] == 1)) {
+      if (isset($this->fields['is_deleted']) && ($this->fields['is_deleted'] == 1)
+          || isset($this->fields['status']) && in_array($this->fields['status'], $this->getClosedStatusArray())
+      ) {
          return false;
       }
       return Session::haveRight(self::$rightname, self::ASSIGN);
@@ -287,7 +289,9 @@ class Ticket extends CommonITILObject {
 
    function canAssignToMe() {
 
-      if (isset($this->fields['is_deleted']) && $this->fields['is_deleted'] == 1) {
+      if (isset($this->fields['is_deleted']) && $this->fields['is_deleted'] == 1
+         || isset($this->fields['status']) && in_array($this->fields['status'], $this->getClosedStatusArray())
+      ) {
          return false;
       }
       return (Session::haveRight(self::$rightname, self::STEAL)
@@ -299,7 +303,7 @@ class Ticket extends CommonITILObject {
    static function canUpdate() {
 
       // To allow update of urgency and category for post-only
-      if ($_SESSION["glpiactiveprofile"]["interface"] == "helpdesk") {
+      if (Session::getCurrentInterface() == "helpdesk") {
          return Session::haveRight(self::$rightname, CREATE);
       }
 
@@ -313,11 +317,6 @@ class Ticket extends CommonITILObject {
 
 
    static function canView() {
-      /*
-      if (isset($_SESSION['glpiactiveprofile']['interface'])
-          && $_SESSION['glpiactiveprofile']['interface'] == 'helpdesk') {
-         return true;
-      }*/
       return (Session::haveRightsOr(self::$rightname,
                                     [self::READALL, self::READMY, UPDATE, self::READASSIGN,
                                           self::READGROUP, self::OWN])
@@ -565,7 +564,7 @@ class Ticket extends CommonITILObject {
       }
 
       // for self-service only, if modification in ticket, we can't update the ticket
-      if ($_SESSION["glpiactiveprofile"]["interface"] == "helpdesk"
+      if (Session::getCurrentInterface() == "helpdesk"
           && !$can_requester) {
          return false;
       }
@@ -595,7 +594,7 @@ class Ticket extends CommonITILObject {
    static function canDelete() {
 
       // to allow delete for self-service only if no action on the ticket
-      if ($_SESSION["glpiactiveprofile"]["interface"] == "helpdesk") {
+      if (Session::getCurrentInterface() == "helpdesk") {
          return Session::haveRight(self::$rightname, CREATE);
       }
       return Session::haveRight(self::$rightname, DELETE);
@@ -626,7 +625,7 @@ class Ticket extends CommonITILObject {
       }
 
       // user can delete his ticket if no action on it
-      if ($_SESSION["glpiactiveprofile"]["interface"] == "helpdesk"
+      if (Session::getCurrentInterface() == "helpdesk"
           && (!($this->isUser(CommonITILActor::REQUESTER, Session::getLoginUserID())
                || $this->fields["users_id_recipient"] === Session::getLoginUserID())
              || $this->numberOfFollowups() > 0
@@ -1000,12 +999,16 @@ class Ticket extends CommonITILObject {
 
       // automatic recalculate if user changes urgence or technician change impact
       $canpriority               = Session::haveRight(self::$rightname, self::CHANGEPRIORITY);
-      if (isset($input['urgency'])
-            && isset($input['impact'])
-            && (($input['urgency'] != $this->fields['urgency'])
-               || $input['impact'] != $this->fields['impact'])
-            && ($canpriority && !isset($input['priority']) || !$canpriority)
+      if ((isset($input['urgency']) && $input['urgency'] != $this->fields['urgency'])
+         || (isset($input['impact']) && $input['impact'] != $this->fields['impact'])
+         && ($canpriority && !isset($input['priority']) || !$canpriority)
       ) {
+         if (!isset($input['urgency'])) {
+            $input['urgency'] = $this->fields['urgency'];
+         }
+         if (!isset($input['impact'])) {
+            $input['impact'] = $this->fields['impact'];
+         }
          $input['priority'] = self::computePriority($input['urgency'], $input['impact']);
       }
 
@@ -1064,9 +1067,12 @@ class Ticket extends CommonITILObject {
 
             // probably transfer
             $allowed_fields[] = 'entities_id';
+            $allowed_fields[] = 'itilcategories_id';
          } else {
             if ($this->canApprove()
-                && isset($input["status"])) {
+                || $this->canAssign()
+                || $this->canAssignToMe()
+                || isset($input['_from_assignment'])) {
                 $allowed_fields[] = 'status';
             }
             // for post-only with validate right or validation created by rules
@@ -1088,6 +1094,9 @@ class Ticket extends CommonITILObject {
                 $allowed_fields[] = 'itilcategories_id';
                 $allowed_fields[] = 'name';
                 $allowed_fields[] = 'items_id';
+                $allowed_fields[] = '_filename';
+                $allowed_fields[] = '_tag_filename';
+                $allowed_fields[] = '_prefix_filename';
             }
 
             if ($this->canSolve()) {
@@ -1871,8 +1880,7 @@ class Ticket extends CommonITILObject {
       // fill auto-assign when no tech defined (only for tech)
       if (!isset($input['_auto_import'])
           && isset($_SESSION['glpiset_default_tech']) && $_SESSION['glpiset_default_tech']
-          && isset($_SESSION['glpiactiveprofile']['interface'])
-          && $_SESSION['glpiactiveprofile']['interface'] == 'central'
+          && Session::getCurrentInterface() == 'central'
           && (!isset($input['_users_id_assign']) || $input['_users_id_assign'] == 0)) {
          $input['_users_id_assign'] = Session::getLoginUserID();
       }
@@ -1918,7 +1926,8 @@ class Ticket extends CommonITILObject {
          unset($input['_users_id_requester_notif']);
       }
       if (isset($input['_users_id_requester_notif'])
-         && isset($input['_users_id_requester_notif']['alternative_email'])) {
+         && isset($input['_users_id_requester_notif']['alternative_email'])
+         && is_array($input['_users_id_requester_notif']['alternative_email'])) {
          foreach ($input['_users_id_requester_notif']['alternative_email'] as $email) {
             if ($email && !NotificationMailing::isUserAddressValid($email)) {
                Session::addMessageAfterRedirect(
@@ -2150,8 +2159,9 @@ class Ticket extends CommonITILObject {
          $tickettask   = new TicketTask;
          foreach ($this->input['_tasktemplates_id'] as $tasktemplates_id) {
             $tasktemplate->getFromDB($tasktemplates_id);
+            $tasktemplate_content = Toolbox::addslashes_deep($tasktemplate->fields["content"]);
             $tickettask->add(['tasktemplates_id'  => $tasktemplates_id,
-                              'content'           => $tasktemplate->fields['content'],
+                              'content'           => $tasktemplate_content,
                               'taskcategories_id' => $tasktemplate->fields['taskcategories_id'],
                               'actiontime'        => $tasktemplate->fields['actiontime'],
                               'state'             => $tasktemplate->fields['state'],
@@ -2632,7 +2642,7 @@ class Ticket extends CommonITILObject {
       $isadmin = static::canUpdate();
       $actions = parent::getSpecificMassiveActions($checkitem);
 
-      if ($_SESSION['glpiactiveprofile']['interface'] == 'central') {
+      if (Session::getCurrentInterface() == 'central') {
          if (TicketFollowup::canCreate()) {
             $actions['TicketFollowup'.MassiveAction::CLASS_ACTION_SEPARATOR.'add_followup']
                = __('Add a new followup');
@@ -3180,6 +3190,8 @@ class Ticket extends CommonITILObject {
          ]
       ];
 
+      $tab = array_merge($tab, TicketTask::getSearchOptionsToAddNew());
+
       $tab = array_merge($tab, $this->getSearchOptionsStats());
 
       $tab[] = [
@@ -3333,8 +3345,6 @@ class Ticket extends CommonITILObject {
             'additionalfields'   => ['tickets_id_2']
          ];
 
-         $tab = array_merge($tab, TicketTask::getSearchOptionsToAddNew());
-
          $tab = array_merge($tab, $this->getSearchOptionsSolution());
 
          if (Session::haveRight('ticketcost', READ)) {
@@ -3363,8 +3373,7 @@ class Ticket extends CommonITILObject {
 
       // Filter search fields for helpdesk
       if (!Session::isCron() // no filter for cron
-          && (!isset($_SESSION['glpiactiveprofile']['interface'])
-              || ($_SESSION['glpiactiveprofile']['interface'] == 'helpdesk'))) {
+          && (Session::getCurrentInterface() != 'central')) {
          $tokeep = ['common', 'requester','satisfaction'];
          if (Session::haveRightsOr('ticketvalidation',
                                    array_merge(TicketValidation::getValidateRights(),
@@ -3699,7 +3708,8 @@ class Ticket extends CommonITILObject {
                                                                              '', Ticket::INCIDENT_TYPE),
                               '_right'              => "id",
                               '_filename'           => [],
-                              '_tag_filename'       => []];
+                              '_tag_filename'       => [],
+                              '_tasktemplates_id'   => []];
 
       // Get default values from posted values on reload form
       if (!$ticket_template) {
@@ -3871,6 +3881,12 @@ class Ticket extends CommonITILObject {
                   $options[$predeffield] = $default_values[$predeffield];
                }
             }
+         }
+      }
+
+      if (isset($options['_tasktemplates_id'])) {
+         foreach ($options['_tasktemplates_id'] as $tasktemplates_id) {
+            echo "<input type='hidden' name='_tasktemplates_id[]' value='$tasktemplates_id'>";
          }
       }
 
@@ -4189,7 +4205,7 @@ class Ticket extends CommonITILObject {
          $requesttype = $_SESSION['glpidefault_requesttypes_id'];
       } else {
          $users_id_requester = 0;
-         $users_id_assign    = o;
+         $users_id_assign    = 0;
          $requesttype        = $CFG_GLPI['default_requesttypes_id'];
       }
 
@@ -4199,54 +4215,54 @@ class Ticket extends CommonITILObject {
 
       // Set default values...
       return  ['_users_id_requester'       => $users_id_requester,
-                    '_users_id_requester_notif' => ['use_notification'  => $default_use_notif,
-                                                         'alternative_email' => ''],
-                    '_groups_id_requester'      => 0,
-                    '_users_id_assign'          =>  $users_id_assign,
-                    '_users_id_assign_notif'    => ['use_notification'  => $default_use_notif,
-                                                         'alternative_email' => ''],
-                    '_groups_id_assign'         => 0,
-                    '_users_id_observer'        => 0,
-                    '_users_id_observer_notif'  => ['use_notification'  => $default_use_notif,
-                                                         'alternative_email' => ''],
-                    '_groups_id_observer'       => 0,
-                    '_link'                     => ['tickets_id_2' => '',
-                                                         'link'         => ''],
-                    '_suppliers_id_assign'      => 0,
-                    '_suppliers_id_assign_notif' => ['use_notification'  => $default_use_notif,
-                                                          'alternative_email' => ''],
-                    'name'                      => '',
-                    'content'                   => '',
-                    'itilcategories_id'         => 0,
-                    'urgency'                   => 3,
-                    'impact'                    => 3,
-                    'priority'                  => self::computePriority(3, 3),
-                    'requesttypes_id'           => $requesttype,
-                    'actiontime'                => 0,
-                    'date'                      => $_SESSION["glpi_currenttime"],
-                    'entities_id'               => $entity,
-                    'status'                    => self::INCOMING,
-                    'followup'                  => [],
-                    'itemtype'                  => '',
-                    'items_id'                  => 0,
-                    'locations_id'              => 0,
-                    'plan'                      => [],
-                    'global_validation'         => CommonITILValidation::NONE,
-                    'time_to_resolve'           => 'NULL',
-                    'time_to_own'               => 'NULL',
-                    'slas_tto_id'               => 0,
-                    'slas_ttr_id'               => 0,
-                    'internal_time_to_resolve'  => 'NULL',
-                    'internal_time_to_own'      => 'NULL',
-                    'olas_tto_id'               => 0,
-                    'olas_ttr_id'               => 0,
-                    '_add_validation'           => 0,
-                    'users_id_validate'         => [],
-                    'type'                      => $type,
-                    '_documents_id'             => [],
-                    '_tasktemplates_id'         => [],
-                    '_filename'                 => [],
-                    '_tag_filename'             => []];
+               '_users_id_requester_notif' => ['use_notification'  => [$default_use_notif],
+                                               'alternative_email' => ['']],
+               '_groups_id_requester'      => 0,
+               '_users_id_assign'          =>  $users_id_assign,
+               '_users_id_assign_notif'    => ['use_notification'  => [$default_use_notif],
+                                               'alternative_email' => ['']],
+               '_groups_id_assign'         => 0,
+               '_users_id_observer'        => 0,
+               '_users_id_observer_notif'  => ['use_notification'  => [$default_use_notif],
+                                               'alternative_email' => ['']],
+               '_groups_id_observer'       => 0,
+               '_link'                     => ['tickets_id_2' => '',
+                                               'link'         => ''],
+               '_suppliers_id_assign'      => 0,
+               '_suppliers_id_assign_notif' => ['use_notification'  => [$default_use_notif],
+                                                'alternative_email' => ['']],
+               'name'                      => '',
+               'content'                   => '',
+               'itilcategories_id'         => 0,
+               'urgency'                   => 3,
+               'impact'                    => 3,
+               'priority'                  => self::computePriority(3, 3),
+               'requesttypes_id'           => $requesttype,
+               'actiontime'                => 0,
+               'date'                      => $_SESSION["glpi_currenttime"],
+               'entities_id'               => $entity,
+               'status'                    => self::INCOMING,
+               'followup'                  => [],
+               'itemtype'                  => '',
+               'items_id'                  => 0,
+               'locations_id'              => 0,
+               'plan'                      => [],
+               'global_validation'         => CommonITILValidation::NONE,
+               'time_to_resolve'           => 'NULL',
+               'time_to_own'               => 'NULL',
+               'slas_tto_id'               => 0,
+               'slas_ttr_id'               => 0,
+               'internal_time_to_resolve'  => 'NULL',
+               'internal_time_to_own'      => 'NULL',
+               'olas_tto_id'               => 0,
+               'olas_ttr_id'               => 0,
+               '_add_validation'           => 0,
+               'users_id_validate'         => [],
+               'type'                      => $type,
+               '_documents_id'             => [],
+               '_tasktemplates_id'         => [],
+               '_filename'                 => [],
+               '_tag_filename'             => []];
    }
 
 
@@ -4375,7 +4391,13 @@ class Ticket extends CommonITILObject {
 
 
    function showForm($ID, $options = []) {
-      global $DB, $CFG_GLPI;
+      global $CFG_GLPI;
+
+      if (isset($options['_add_fromitem'])) {
+         $item = new $options['itemtype'];
+         $item->getFromDB($options['items_id'][$options['itemtype']][0]);
+         $options['entities_id'] = $item->fields['entities_id'];
+      }
 
       $default_values = self::getDefaultValues();
 
@@ -4541,10 +4563,11 @@ class Ticket extends CommonITILObject {
       $options['_tickettemplate'] = $tt;
 
       // check right used for this ticket
-      $canupdate   = !$ID
-                     || Session::haveRight(self::$rightname, UPDATE)
-                     || $this->canRequesterUpdateItem();
-      $canpriority = Session::haveRight(self::$rightname, self::CHANGEPRIORITY);
+      $canupdate     = !$ID || Session::haveRight(self::$rightname, UPDATE);
+      $can_requester = $this->canRequesterUpdateItem();
+      $canpriority   = Session::haveRight(self::$rightname, self::CHANGEPRIORITY);
+      $canassign     = $this->canAssign();
+      $canassigntome = $this->canAssignTome();
 
       if ($ID && in_array($this->fields['status'], $this->getClosedStatusArray())) {
          $canupdate = false;
@@ -4785,11 +4808,11 @@ class Ticket extends CommonITILObject {
                                              $tt->getMandatoryMark('itilcategories_id'))."</th>";
       echo "<td width='$colsize4%'>";
       // Permit to set category when creating ticket without update right
-      if ($canupdate) {
+      if ($canupdate || $can_requester) {
 
          $opt = ['value'  => $this->fields["itilcategories_id"],
                       'entity' => $this->fields["entities_id"]];
-         if ($_SESSION["glpiactiveprofile"]["interface"] == "helpdesk") {
+         if (Session::getCurrentInterface() == "helpdesk") {
             $opt['condition'] = "`is_helpdeskvisible`='1' AND ";
          } else {
             $opt['condition'] = '';
@@ -4874,13 +4897,13 @@ class Ticket extends CommonITILObject {
       echo "</td>";
       echo "</tr>";
 
-      /*echo "<tr class='tab_bg_1'>";
+      echo "<tr class='tab_bg_1'>";
       echo "<th>".$tt->getBeginHiddenFieldText('urgency');
       printf(__('%1$s%2$s'), __('Urgency'), $tt->getMandatoryMark('urgency'));
       echo $tt->getEndHiddenFieldText('urgency')."</th>";
       echo "<td>";
 
-      if ($canupdate) {
+      if ($canupdate || $can_requester) {
          echo $tt->getBeginHiddenFieldValue('urgency');
          $idurgency = self::dropdownUrgency(['value' => $this->fields["urgency"]]);
          echo $tt->getEndHiddenFieldValue('urgency', $this);
@@ -4893,9 +4916,7 @@ class Ticket extends CommonITILObject {
          echo parent::getUrgencyName($this->fields["urgency"]);
          echo $tt->getEndHiddenFieldValue('urgency', $this);
       }
-
       echo "</td>";
-      */
       // Display validation state
       echo "<th>";
       if (!$ID) {
@@ -4952,7 +4973,6 @@ class Ticket extends CommonITILObject {
       }
       echo "</td></tr>";
 
-      /*
       echo "<tr class='tab_bg_1'>";
       echo "<th>".$tt->getBeginHiddenFieldText('impact');
       printf(__('%1$s%2$s'), __('Impact'), $tt->getMandatoryMark('impact'));
@@ -4969,7 +4989,7 @@ class Ticket extends CommonITILObject {
       }
       echo $tt->getEndHiddenFieldValue('impact', $this);
       echo "</td>";
-    */
+
       echo "<th>".$tt->getBeginHiddenFieldText('locations_id');
       printf(__('%1$s%2$s'), __('Location'), $tt->getMandatoryMark('locations_id'));
       echo $tt->getEndHiddenFieldText('locations_id')."</th>";
@@ -5007,10 +5027,10 @@ class Ticket extends CommonITILObject {
          echo $tt->getEndHiddenFieldValue('priority', $this);
       }
 
-      if ($canupdate) {
+      if ($canupdate || $can_requester) {
          $params = ['urgency'  => '__VALUE0__',
-                         'impact'   => '__VALUE1__',
-                         'priority' => $idpriority];
+                    'impact'   => '__VALUE1__',
+                    'priority' => $idpriority];
          Ajax::updateItemOnSelectEvent(['dropdown_urgency'.$idurgency,
                                              'dropdown_impact'.$idimpact],
                                        $idajax,
@@ -5040,7 +5060,7 @@ class Ticket extends CommonITILObject {
       } else {
          echo "<td>";
          echo $tt->getBeginHiddenFieldValue('items_id');
-         $options['_canupdate'] = $canupdate;
+         $options['_canupdate'] = $canupdate || $can_requester;
          Item_Ticket::itemAddForm($this, $options);
          echo $tt->getEndHiddenFieldValue('items_id', $this);
          echo "</td>";
@@ -5075,7 +5095,7 @@ class Ticket extends CommonITILObject {
       printf(__('%1$s%2$s'), __('Title'), $tt->getMandatoryMark('name'));
       echo $tt->getEndHiddenFieldText('name')."</th>";
       echo "<td colspan='3'>";
-      if ($canupdate) {
+      if ($canupdate || $can_requester) {
          echo $tt->getBeginHiddenFieldValue('name');
          echo "<input type='text' style='width:98%' maxlength=250 name='name' ".
                 ($tt->isMandatoryField('name') ? " required='required'" : '') .
@@ -5094,7 +5114,7 @@ class Ticket extends CommonITILObject {
       echo "<tr class='tab_bg_1'>";
       echo "<th style='width:$colsize1%'>".$tt->getBeginHiddenFieldText('content');
       printf(__('%1$s%2$s'), __('Description'), $tt->getMandatoryMark('content'));
-      if ($canupdate) {
+      if ($canupdate || $can_requester) {
          $content = Toolbox::unclean_cross_side_scripting_deep(Html::entity_decode_deep($this->fields['content']));
          Html::showTooltip(nl2br(Html::Clean($content)));
       }
@@ -5123,7 +5143,7 @@ class Ticket extends CommonITILObject {
       }
 
       echo "<div id='content$rand_text'>";
-      if ($CFG_GLPI['use_rich_text'] || $canupdate) {
+      if ($CFG_GLPI['use_rich_text'] || $canupdate || $can_requester) {
          echo "<textarea id='$content_id' name='content' style='width:100%' rows='$rows'".
                ($tt->isMandatoryField('content') ? " required='required'" : '') . ">" .
                $content."</textarea></div>";
@@ -5131,7 +5151,7 @@ class Ticket extends CommonITILObject {
             echo Html::scriptBlock("$(document).ready(function() { $('#$content_id').autogrow(); });");
          }
       } else {
-         echo $content;
+         echo Toolbox::getHtmlToDisplay($content);
       }
       echo $tt->getEndHiddenFieldValue('content', $this);
 
@@ -5179,87 +5199,86 @@ class Ticket extends CommonITILObject {
       echo "</td>";
       echo "</tr>";
 
-      // View files added
-      echo "<tr class='tab_bg_1'>";
-      // Permit to add doc when creating a ticket
-      echo "<th style='width:$colsize1%'>";
-      echo $tt->getBeginHiddenFieldText('_documents_id');
-      $doctitle =  sprintf(__('File (%s)'), Document::getMaxUploadSize());
-      printf(__('%1$s%2$s'), $doctitle, $tt->getMandatoryMark('_documents_id'));
-      // Do not show if hidden.
-      if (!$tt->isHiddenField('_documents_id')) {
-         DocumentType::showAvailableTypesLink();
-      }
-      echo $tt->getEndHiddenFieldText('_documents_id');
-      echo "</th>";
-      echo "<td colspan='3'>";
-      // Do not set values
-      echo $tt->getEndHiddenFieldValue('_documents_id');
-      if ($tt->isPredefinedField('_documents_id')) {
-         if (isset($options['_documents_id'])
-             && is_array($options['_documents_id'])
-             && count($options['_documents_id'])) {
+      if (!in_array($this->fields['status'], $this->getClosedStatusArray())) {
+         // View files added
+         echo "<tr class='tab_bg_1'>";
+         // Permit to add doc when creating a ticket
+         echo "<th style='width:$colsize1%'>";
+         echo $tt->getBeginHiddenFieldText('_documents_id');
+         $doctitle =  sprintf(__('File (%s)'), Document::getMaxUploadSize());
+         printf(__('%1$s%2$s'), $doctitle, $tt->getMandatoryMark('_documents_id'));
+         // Do not show if hidden.
+         if (!$tt->isHiddenField('_documents_id')) {
+            DocumentType::showAvailableTypesLink();
+         }
+         echo $tt->getEndHiddenFieldText('_documents_id');
+         echo "</th>";
+         echo "<td colspan='3'>";
+         // Do not set values
+         echo $tt->getEndHiddenFieldValue('_documents_id');
+         if ($tt->isPredefinedField('_documents_id')) {
+            if (isset($options['_documents_id'])
+               && is_array($options['_documents_id'])
+               && count($options['_documents_id'])) {
 
-            echo "<span class='b'>".__('Default documents:').'</span>';
-            echo "<br>";
-            $doc = new Document();
-            foreach ($options['_documents_id'] as $key => $val) {
-               if ($doc->getFromDB($val)) {
-                  echo "<input type='hidden' name='_documents_id[$key]' value='$val'>";
-                  echo "- ".$doc->getNameID()."<br>";
+               echo "<span class='b'>".__('Default documents:').'</span>';
+               echo "<br>";
+               $doc = new Document();
+               foreach ($options['_documents_id'] as $key => $val) {
+                  if ($doc->getFromDB($val)) {
+                     echo "<input type='hidden' name='_documents_id[$key]' value='$val'>";
+                     echo "- ".$doc->getNameID()."<br>";
+                  }
                }
             }
          }
+         Html::file(['filecontainer' => 'fileupload_info_ticket',
+                        'editor_id'     => $content_id,
+                        'showtitle'     => false,
+                        'multiple'     => true]);
+         echo "</td>";
+         echo "</tr>";
       }
-      Html::file(['filecontainer' => 'fileupload_info_ticket',
-                       'editor_id'     => $content_id,
-                       'showtitle'     => false,
-                       'multiple'     => true]);
-      echo "</td>";
-      echo "</tr>";
 
       Plugin::doHook("post_item_form", ['item' => $this, 'options' => &$options]);
 
       echo "</table>";
 
-      if (($canupdate
-           || $canpriority
-           || $this->canAssign()
-           || $this->canAssignTome())
+      $display_save_btn = $canupdate
+                       || $can_requester
+                       || $canpriority
+                       || $canassign
+                       || $canassigntome;
+
+      if ($display_save_btn
           && !$options['template_preview']) {
-
          if ($ID) {
-            if (self::canPurge()
-                || $this->canDeleteItem()
-                || $canupdate) {
-               echo "<div class='center'>";
-               if ($this->fields["is_deleted"] == 1) {
-                  if (self::canPurge()) {
-                     echo "<input type='submit' class='submit' name='restore' value='".
-                            _sx('button', 'Restore')."'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-                  }
-               } else {
-                  if ($canupdate || $canpriority) {
-                     echo "<input type='submit' class='submit' name='update' value='".
-                            _sx('button', 'Save')."'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-                  }
+            echo "<div class='center'>";
+            if ($this->fields["is_deleted"] == 1) {
+               if (self::canDelete()) {
+                  echo "<input type='submit' class='submit' name='restore' value='".
+                         _sx('button', 'Restore')."'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
                }
-               if ($this->fields["is_deleted"] == 1) {
-                  if (self::canPurge()) {
-                     echo "<input type='submit' class='submit' name='purge' value='".
-                            _sx('button', 'Delete permanently')."' ".
-                            Html::addConfirmationOnAction(__('Confirm the final deletion?')).">";
-                  }
-               } else {
-                  if ($this->canDeleteItem()) {
-                     echo "<input type='submit' class='submit' name='delete' value='".
-                            _sx('button', 'Put in dustbin')."'>";
-                  }
+            } else {
+               if ($display_save_btn) {
+                  echo "<input type='submit' class='submit' name='update' value='".
+                         _sx('button', 'Save')."'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
                }
-               echo "<input type='hidden' name='_read_date_mod' value='".$this->getField('date_mod')."'>";
-               echo "</div>";
             }
-
+            if ($this->fields["is_deleted"] == 1) {
+               if (self::canPurge()) {
+                  echo "<input type='submit' class='submit' name='purge' value='".
+                         _sx('button', 'Delete permanently')."' ".
+                         Html::addConfirmationOnAction(__('Confirm the final deletion?')).">";
+               }
+            } else {
+               if ($this->canDeleteItem()) {
+                  echo "<input type='submit' class='submit' name='delete' value='".
+                         _sx('button', 'Put in dustbin')."'>";
+               }
+            }
+            echo "<input type='hidden' name='_read_date_mod' value='".$this->getField('date_mod')."'>";
+            echo "</div>";
          } else {
             echo "<div class='tab_bg_2 center'>";
             echo "<input type='submit' name='add' value=\""._sx('button', 'Add')."\" class='submit'>";
@@ -5827,7 +5846,7 @@ class Ticket extends CommonITILObject {
       echo "<table class='tab_cadrehov' >";
       echo "<tr class='noHover'><th colspan='2'>";
 
-      if ($_SESSION["glpiactiveprofile"]["interface"] != "central") {
+      if (Session::getCurrentInterface() != "central") {
          echo "<a href=\"".$CFG_GLPI["root_doc"]."/front/helpdesk.public.php?create_ticket=1\" class='pointer'>".
                 __('Create a ticket')."&nbsp;<i class='fa fa-plus'></i><span class='sr-only'>". __s('Add')."</span></a>";
       } else {
@@ -6057,19 +6076,32 @@ class Ticket extends CommonITILObject {
       }
 
       // Ticket for the item
-      echo "<div class='firstbloc'>";
       // Link to open a new ticket
       if ($item->getID()
           && Ticket::isPossibleToAssignType($item->getType())
           && self::canCreate()
           && !(!empty($withtemplate) && ($withtemplate == 2))
             && (!isset($item->fields['is_template']) || ($item->fields['is_template'] == 0))) {
+         echo "<div class='firstbloc'>";
          Html::showSimpleForm($CFG_GLPI["root_doc"]."/front/ticket.form.php",
                               '_add_fromitem', __('New ticket for this item...'),
                               ['itemtype' => $item->getType(),
                                     'items_id' => $item->getID()]);
+         echo "</div>";
       }
-      echo "</div><div>";
+
+      if ($item->getID()
+          && ($item->getType() == 'User')
+          && self::canCreate()
+          && !(!empty($withtemplate) && ($withtemplate == 2))) {
+         echo "<div class='firstbloc'>";
+         Html::showSimpleForm($CFG_GLPI["root_doc"]."/front/ticket.form.php",
+                              '_add_fromitem', __('New ticket for this item...'),
+                              ['_users_id_requester' => $item->getID()]);
+         echo "</div>";
+      }
+
+      echo "<div>";
 
       if ($number > 0) {
          echo "<table class='tab_cadre_fixehov'>";
@@ -6092,18 +6124,6 @@ class Ticket extends CommonITILObject {
       } else {
          echo "<table class='tab_cadre_fixe'>";
          echo "<tr><th>".__('No ticket found.')."</th></tr>";
-      }
-
-      if ($item->getID()
-          && ($item->getType() == 'User')
-          && self::canCreate()
-          && !(!empty($withtemplate) && ($withtemplate == 2))
-          && isset($item->fields['is_template']) && ($item->fields['is_template'] == 0)) {
-         echo "<tr><td class='tab_bg_2 center b' colspan='$colspan'>";
-         Html::showSimpleForm($CFG_GLPI["root_doc"]."/front/ticket.form.php",
-                              '_add_fromitem', __('New ticket for this item...'),
-                              ['_users_id_requester' => $item->getID()]);
-         echo "</td></tr>";
       }
 
       // Ticket list
@@ -6931,8 +6951,7 @@ class Ticket extends CommonITILObject {
          $date = "";
          if (isset($item_i['date'])) {
             $date = $item_i['date'];
-         }
-         if (isset($item_i['date_mod'])) {
+         } else if (isset($item_i['date_mod'])) {
             $date = $item_i['date_mod'];
          }
 
@@ -7017,8 +7036,8 @@ class Ticket extends CommonITILObject {
 
          if (isset($item_i['content'])) {
             $content = $item_i['content'];
-            $content = autolink($content, 40);
-            //$content = nl2br($content);
+            $content = autolink($content, false);
+            $content = Toolbox::getHtmlToDisplay($content);
 
             $long_text = "";
             if ((substr_count($content, "<br") > 30) || (strlen($content) > 2000)) {
@@ -7184,39 +7203,31 @@ class Ticket extends CommonITILObject {
          echo "<div class='h_info'>";
          echo "<div class='h_date'><i class='fa fa-clock-o'></i>".Html::convDateTime($this->fields['date'])."</div>";
          echo "<div class='h_user'>";
-         $dem = '0';
-         foreach ($DB->request("glpi_tickets_users",
-               "`tickets_id` = ".$this->fields['id']." AND `type` = 1") AS $req) {
-               $dem = $req['users_id'];
+
+         $user->getFromDB($this->fields['users_id_recipient']);
+         if (isset($item_i['users_id_recipient'])
+               && ($item_i['users_id_recipient'] != 0)) {
+            $user->getFromDB($item_i['users_id_recipient']);
          }
-         if ((!isset($item_i['users_id_recipient'])
-               || ($item_i['users_id_recipient'] == 0))
-               && ($dem == 0)) {
-            echo __("Requester");
-         } else {
-            if (isset($item_i['users_id_recipient'])
-                  && ($item_i['users_id_recipient'] != 0)) {
-               $user->getFromDB($this->fields['users_id_recipient']);
-            } else if ($dem > 0) {
-               $requester = new User();
-               if ($requester->getFromDB($dem)) {
-                  $user = $requester;
-               }
-            }
 
-            echo "<div class='tooltip_picture_border'>";
-            $picture = "";
-            if (isset($user->fields['picture'])) {
-               $picture = $user->fields['picture'];
-            }
-            echo "<img class='user_picture' alt=\"".__s('Picture')."\" src='".
-            User::getThumbnailURLForPicture($picture)."'>";
-            echo "</div>";
+         echo "<div class='tooltip_picture_border'>";
+         $picture = "";
+         if (isset($user->fields['picture'])) {
+            $picture = $user->fields['picture'];
+         }
+         echo "<img class='user_picture' alt=\"".__s('Picture')."\" src='".
+         User::getThumbnailURLForPicture($picture)."'>";
+         echo "</div>";
 
+         if ($user->fields['id']) {
             echo $user->getLink()."&nbsp;";
             $reqdata = getUserName($user->getID(), 2);
-            echo Html::showToolTip($reqdata["comment"],
-              ['link' => $reqdata['link']]);
+            echo Html::showToolTip(
+               $reqdata["comment"],
+               ['link' => $reqdata['link']]
+            );
+         } else {
+            echo __('Requester');
          }
 
          echo "</div>"; // h_user
@@ -7235,7 +7246,7 @@ class Ticket extends CommonITILObject {
          if ($CFG_GLPI["use_rich_text"]) {
             echo Html::setRichTextContent('', $this->fields['content'], '', true);
          } else {
-            echo Html::setSimpleTextContent($this->fields['content']);
+            echo Toolbox::getHtmlToDisplay(Html::setSimpleTextContent($this->fields['content']));
          }
 
          echo "</div>";
@@ -7366,9 +7377,10 @@ class Ticket extends CommonITILObject {
                   'tasks_id':   tasks_id,
                   'tickets_id': ".$this->fields['id']."
                 })
-                .done(function(new_state) {
+                .done(function(response) {
                   $(target).removeClass('state_1 state_2')
-                           .addClass('state_'+new_state);
+                           .addClass('state_'+response.state)
+                           .attr('title', response.label);
                 });
       }
 

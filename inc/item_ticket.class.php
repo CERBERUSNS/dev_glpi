@@ -274,7 +274,7 @@ class Item_Ticket extends CommonDBRelation{
          }
          // Global search
          Item_Ticket::dropdownAllDevices("itemtype", $params['itemtype'], 0, 1, $params['_users_id_requester'], $ticket->fields["entities_id"], $p);
-         echo "<span id='item_ticket_selection_information'></span>";
+         echo "<span id='item_ticket_selection_information$rand'></span>";
          echo "</div>";
 
          // Add button
@@ -442,8 +442,8 @@ class Item_Ticket extends CommonDBRelation{
             }
          }
 
-         self::dropdownAllDevices("itemtype", null, 0, 1, $dev_user_id, $ticket->fields["entities_id"], ['tickets_id' => $instID]);
-         echo "<span id='item_ticket_selection_information'></span>";
+         self::dropdownAllDevices("itemtype", null, 0, 1, $dev_user_id, $ticket->fields["entities_id"], ['tickets_id' => $instID, 'used' => $used, 'rand' => $rand]);
+         echo "<span id='item_ticket_selection_information$rand'></span>";
          echo "</td><td class='center' width='30%'>";
          echo "<input type='submit' name='add' value=\""._sx('button', 'Add')."\" class='submit'>";
          echo "<input type='hidden' name='tickets_id' value='$instID'>";
@@ -475,9 +475,6 @@ class Item_Ticket extends CommonDBRelation{
       $header_end .= "<th>".__('Name')."</th>";
       $header_end .= "<th>".__('Serial number')."</th>";
       $header_end .= "<th>".__('Inventory number')."</th>";
-      if ($canedit && $number) {
-         $header_end .= "<th width='10'>".__('Update the item')."</th>";
-      }
       echo "<tr>";
       echo $header_begin.$header_top.$header_end;
 
@@ -522,7 +519,7 @@ class Item_Ticket extends CommonDBRelation{
                    || empty($data["name"])) {
                   $name = sprintf(__('%1$s (%2$s)'), $name, $data["id"]);
                }
-               if ($_SESSION['glpiactiveprofile']['interface'] != 'helpdesk') {
+               if (Session::getCurrentInterface() != 'helpdesk') {
                   $link     = $itemtype::getFormURLWithID($data['id']);
                   $namelink = "<a href=\"".$link."\">".$name."</a>";
                } else {
@@ -549,12 +546,6 @@ class Item_Ticket extends CommonDBRelation{
                     "</td>";
                echo "<td class='center'>".
                       (isset($data["otherserial"])? "".$data["otherserial"]."" :"-")."</td>";
-               if ($canedit) {
-                  echo "<td width='10'>";
-                  Html::showMassiveActionCheckBox($itemtype, $data["id"]);
-                  echo "</td>";
-               }
-
                echo "</tr>";
             }
             $totalnb += $nb;
@@ -989,7 +980,7 @@ class Item_Ticket extends CommonDBRelation{
          // Auto update summary of active or just solved tickets
          $params = ['my_items' => '__VALUE__'];
 
-         Ajax::updateItemOnSelectEvent("dropdown_my_items$rand", "item_ticket_selection_information",
+         Ajax::updateItemOnSelectEvent("dropdown_my_items$rand", "item_ticket_selection_information$rand",
                                        $CFG_GLPI["root_doc"]."/ajax/ticketiteminformation.php",
                                        $params);
       }

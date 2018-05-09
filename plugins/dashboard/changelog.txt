@@ -1,0 +1,13 @@
+Versão 0.9.0:
+
+- GLPI 9.2.x apenas;
+- Correção do dropdown no Relatório por Categorias;
+- Correção de bugs diversos;
+
+
+Version 0.9.0:
+
+- Only for GLPI 9.2.x;
+- Fix dropdown in Report by Category;
+- Fix minor bugs;
+

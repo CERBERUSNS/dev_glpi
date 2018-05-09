@@ -970,7 +970,7 @@ function update91to92() {
    }
 
    if ($DB->fieldExists("glpi_notifications", "mode", false)) {
-      $query = "INSERT INTO `glpi_notifications_notificationtemplates`
+      $query = "REPLACE INTO `glpi_notifications_notificationtemplates`
                        (`notifications_id`, `mode`, `notificationtemplates_id`)
                        SELECT `id`, `mode`, `notificationtemplates_id`
                        FROM `glpi_notifications`";
@@ -1042,7 +1042,7 @@ function update91to92() {
    } else {
       //Just display a Warning to the user.
       $migration->displayWarning("An index must be added in the 'id_search_option' field " .
-         "of the 'glpi_logs table'; but your gpi_logs table is " .
+         "of the 'glpi_logs table'; but your glpi_logs table is " .
                                  "too huge. You'll have to add it on your database.");
    }
 
@@ -1232,7 +1232,7 @@ Regards,',
          if (!isset($mapping[$key])) {
             $mapping[$key] = [];
          }
-         $kver->add(['version' => $data['os_kernel_version']]);
+         $kver->add(['version' => $DB->escape($data['os_kernel_version'])]);
          $mapping[$key][$data['id']] = $kver->getID();
       }
 
@@ -1427,7 +1427,7 @@ Regards,',
          Notification_NotificationTemplate::MODE_MAIL.
          "' AND `notificationtemplates_id`='$nottid'";
       if (!countElementsInTable('glpi_notifications_notificationtemplates', $where)) {
-         $query = "INSERT INTO `glpi_notifications_notificationtemplates`
+         $query = "REPLACE INTO `glpi_notifications_notificationtemplates`
                    VALUES (null, $notid, '".Notification_NotificationTemplate::MODE_MAIL."', $nottid);";
          $DB->queryOrDie($query, "9.2 Add certificates alerts notification templates");
       }
@@ -1672,11 +1672,11 @@ Regards,',
       while ($row = $iterator->next()) {
          if (!isset($firmwares[$row['firmware']])) {
             $fw = new DeviceFirmware();
-            if ($fw->getFromDBByCrit(['designation' => $row['firmware']])) {
+            if ($fw->getFromDBByCrit(['designation' => $DB->escape($row['firmware'])])) {
                $firmwares[$row['firmware']] = $fw->getID();
             } else {
                $id = $fw->add([
-                  'designation'              => $row['firmware'],
+                  'designation'              => $DB->escape($row['firmware']),
                   'devicefirmwaretypes_id'   => '3' //type "firmware"
                ]);
                $firmwares[$row['firmware']] = $id;
@@ -1702,8 +1702,8 @@ Regards,',
       while ($row = $iterator->next()) {
          $fw = new DeviceFirmware();
          $id = $fw->add([
-            'designation'              => $row['name'],
-            'comment'                  => $row['comment'],
+            'designation'              => $DB->escape($row['name']),
+            'comment'                  => $DB->escape($row['comment']),
             'devicefirmwaretypes_id'   => 3, //type "Firmware"
             'date_creation'            => $row['date_creation'],
             'date_mod'                 => $row['date_mod']

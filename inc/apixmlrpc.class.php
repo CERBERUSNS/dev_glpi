@@ -42,11 +42,19 @@ class APIXmlrpc extends API {
    protected $debug = 0;
    protected $format = "json";
 
+   static $content_type = "application/xml";
 
    public static function getTypeName($nb = 0) {
       return __('XMLRPC API');
    }
 
+   /**
+    * Upload and validate files from request and append to $this->parameters['input']
+    *
+    * @return void
+    */
+   public function manageUploadedFiles() {
+   }
 
    /**
     * parse POST var to retrieve
@@ -65,6 +73,7 @@ class APIXmlrpc extends API {
 
       // retrieve session (if exist)
       $this->retrieveSession();
+      $this->initApi();
 
       $code = 200;
 
@@ -192,7 +201,7 @@ class APIXmlrpc extends API {
             $response = $this->createItems($this->parameters['itemtype'], $this->parameters);
 
             $additionalheaders = [];
-            if (count($response) == 1) {
+            if (isset($response['id'])) {
                // add a location targetting created element
                $additionalheaders['location'] = self::$api_url."/".$this->parameters['itemtype']."/".$response['id'];
             } else {
@@ -260,6 +269,16 @@ class APIXmlrpc extends API {
          } else {
             $this->parameters['input'] = json_decode(json_encode($this->parameters['input']),
                                                                  false);
+         }
+      }
+
+      // check boolean parameters
+      foreach ($this->parameters as $key => &$parameter) {
+         if ($parameter === "true") {
+            $parameter = true;
+         }
+         if ($parameter === "false") {
+            $parameter = false;
          }
       }
 

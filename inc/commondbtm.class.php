@@ -3437,6 +3437,11 @@ class CommonDBTM extends CommonGLPI {
          return $options;
       }
 
+      if (defined('TU_USER') && $itemtype != null) {
+         $item = new $itemtype;
+         $all_options = $item->getSearchOptions();
+      }
+
       foreach ($classname::getSearchOptionsToAddNew($itemtype) as $opt) {
          if (!isset($opt['id'])) {
             throw new \Exception(get_called_class() . ': invalid search option! ' . print_r($opt, true));
@@ -3444,8 +3449,25 @@ class CommonDBTM extends CommonGLPI {
          $optid = $opt['id'];
          unset($opt['id']);
 
+         if (defined('TU_USER') && $itemtype != null) {
+            if (isset($all_options[$optid])) {
+               $message = "Duplicate key $optid ({$all_options[$optid]['name']}/{$opt['name']}) in ".
+                  self::class . " searchOptionsToAdd for $itemtype!";
+
+               if (defined('TU_USER')) {
+                  //will break tests
+                  throw new \RuntimeException($message);
+               } else {
+                  Toolbox::logDebug($message);
+               }
+            }
+         }
+
          foreach ($opt as $k => $v) {
             $options[$optid][$k] = $v;
+            if (defined('TU_USER') && $itemtype != null) {
+               $all_options[$optid][$k] = $v;
+            }
          }
       }
 
@@ -4551,6 +4573,9 @@ class CommonDBTM extends CommonGLPI {
          return false;
       }
 
+      // force template
+      $item->fields['is_template'] = true;
+
       $query = "SELECT *
                 FROM `".$item->getTable()."`
                 WHERE `is_template` = '1' ";
@@ -4617,9 +4642,11 @@ class CommonDBTM extends CommonGLPI {
                   echo "<td class='tab_bg_1 center'>$entity</td>";
                }
                echo "<td class='tab_bg_2 center b'>";
-               Html::showSimpleForm($target, 'purge', _x('button', 'Delete permanently'),
-                                    ['withtemplate' => 1,
-                                          'id'           => $data['id']]);
+               if ($item->can($data['id'], PURGE)) {
+                  Html::showSimpleForm($target, 'purge', _x('button', 'Delete permanently'),
+                                       ['withtemplate' => 1,
+                                        'id'           => $data['id']]);
+               }
                echo "</td>";
             } else {
                $add_params =
@@ -4783,9 +4810,14 @@ class CommonDBTM extends CommonGLPI {
          }
 
          //retrieve entity
-         $entities_id = isset($this->fields["entities_id"])
-                           ? $this->fields["entities_id"]
-                           : $_SESSION['glpiactive_entity'];
+         $entities_id = $_SESSION['glpiactive_entity'];
+         if (isset($this->fields["entities_id"])) {
+            $entities_id = $this->fields["entities_id"];
+         } else if (isset($input['entities_id'])) {
+            $entities_id = $input['entities_id'];
+         } else if (isset($input['_job']->fields['entities_id'])) {
+            $entities_id = $input['_job']->fields['entities_id'];
+         }
 
          // Check for duplicate
          if ($doc->getFromDBbyContent($entities_id, $filename)) {
@@ -4813,6 +4845,7 @@ class CommonDBTM extends CommonGLPI {
             // Insert image tag
             $input2["tag"] = $input['_tag'][$key];
             $input2["entities_id"]             = $entities_id;
+            $input2["is_recursive"]            = 1;
             $input2["documentcategories_id"]   = $CFG_GLPI["documentcategories_id_forticket"];
             $input2["_only_if_upload_succeed"] = 1;
             $input2["_filename"]               = [$file];
@@ -4844,7 +4877,7 @@ class CommonDBTM extends CommonGLPI {
                $skip_docitem = true;
             }
 
-            // add doc - item ling
+            // add doc - item link
             if (!$skip_docitem) {
                $toadd = [
                   'documents_id'  => $docID,

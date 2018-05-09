@@ -63,7 +63,11 @@ function update92to921() {
    }
 
    if (!$DB->fieldExists('glpi_tickets', 'time_to_own')) {
-      $migration->addField("glpi_tickets", "time_to_own", "datetime", ['after' => 'due_date']);
+      $after = 'due_date';
+      if (!$DB->fieldExists('glpi_tickets', 'due_date')) {
+         $after = 'time_to_resolve';
+      }
+      $migration->addField("glpi_tickets", "time_to_own", "datetime", ['after' => $after]);
       $migration->addKey('glpi_tickets', 'time_to_own');
    }
 
@@ -306,7 +310,7 @@ function update92to921() {
                              WHERE `entities_id` = -1");
 
    if ($DB->fieldExists("glpi_notifications", "mode", false)) {
-      $query = "INSERT INTO `glpi_notifications_notificationtemplates`
+      $query = "REPLACE INTO `glpi_notifications_notificationtemplates`
                        (`notifications_id`, `mode`, `notificationtemplates_id`)
                        SELECT `id`, `mode`, `notificationtemplates_id`
                        FROM `glpi_notifications`";

@@ -1,13 +1,18 @@
 <?php
- class DB extends DBmysql {
+ class DB extends DBmysql {
+
                 
- var $dbhost = 'localhost';
+ var $dbhost = 'localhost';
+
                 
- var $dbuser 	= 'root';
+ var $dbuser 	= 'root';
+
                 
- var $dbpassword= 'root';
+ var $dbpassword= 'root';
+
                 
- var $dbdefault	= 'glpi';
+ var $dbdefault	= 'glpi';
+
                 
  } 
 ?>

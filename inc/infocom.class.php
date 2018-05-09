@@ -737,11 +737,14 @@ class Infocom extends CommonDBChild {
     * @return array|boolean
     */
    static public function linearAmortise($value, $duration, $fiscaldate, $buydate = '', $usedate = '') {
+      //Set timezone to UTC; see https://stackoverflow.com/a/40358744
+      $TZ = 'UTC';
+
       try {
          if ($fiscaldate == '') {
             throw new \RuntimeException('Empty date');
          }
-         $fiscaldate = new \DateTime($fiscaldate);
+         $fiscaldate = new \DateTime($fiscaldate, new DateTimeZone($TZ));
       } catch (\Exception $e) {
          Session::addMessageAfterRedirect(
             __('Please fill you fiscal year date in preferences.'),
@@ -757,9 +760,9 @@ class Infocom extends CommonDBChild {
             throw new \RuntimeException('Empty date');
          }
          if ($usedate != '') {
-            $usedate = new \DateTime($usedate);
+            $usedate = new \DateTime($usedate, new DateTimeZone($TZ));
          } else {
-            $usedate = new \DateTime($buydate);
+            $usedate = new \DateTime($buydate, new DateTimeZone($TZ));
          }
       } catch (\Exception $e) {
          Session::addMessageAfterRedirect(
@@ -770,15 +773,19 @@ class Infocom extends CommonDBChild {
          return false;
       }
 
-      $now = new \DateTime();
-      $elapsed = $now->diff($usedate);
+      $now = new \DateTime('now', new DateTimeZone($TZ));
+
+      $elapsed_years = $now->format('Y') - $usedate->format('Y');
 
       $annuity = $value * (1 / $duration);
       $years = [];
-      for ($i = 0; $i <= $elapsed->format('%y'); ++$i) {
+      for ($i = 0; $i <= $elapsed_years; ++$i) {
          $begin_value      = $value;
          $current_annuity  = $annuity;
-         $fiscal_end       = new \DateTime($fiscaldate->format('d-m-') . ($usedate->format('Y') + $i));
+         $fiscal_end       = new \DateTime(
+            $fiscaldate->format('d-m-') . ($usedate->format('Y') + $i),
+            new DateTimeZone($TZ)
+         );
 
          if ($i == 0) {
             //first year, calculate prorata
@@ -1585,7 +1592,7 @@ class Infocom extends CommonDBChild {
       ];
 
       $tab[] = [
-         'id'                 => '123',
+         'id'                 => '173',
          'table'              => 'glpi_businesscriticities',
          'field'              => 'completename',
          'name'               => __('Business criticity'),

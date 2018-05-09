@@ -113,7 +113,12 @@ class Session {
                $_SESSION["glpidefault_entity"]  = $auth->user->fields['entities_id'];
                $_SESSION["glpiusers_idisation"] = true;
                $_SESSION["glpiextauth"]         = $auth->extauth;
-               $_SESSION["glpiauthtype"]        = $auth->user->fields['authtype'];
+               if (isset($_SESSION['phpCAS']['user'])) {
+                  $_SESSION["glpiauthtype"]     = Auth::CAS;
+                  $_SESSION["glpiextauth"]      = 0;
+               } else {
+                  $_SESSION["glpiauthtype"]     = $auth->user->fields['authtype'];
+               }
                $_SESSION["glpiroot"]            = $CFG_GLPI["root_doc"];
                $_SESSION["glpi_use_mode"]       = $auth->user->fields['use_mode'];
                $_SESSION["glpi_plannings"]      = importArrayFromDB($auth->user->fields['plannings']);
@@ -152,7 +157,7 @@ class Session {
                   self::changeProfile(key($_SESSION['glpiprofiles']));
                }
 
-               if (!isset($_SESSION["glpiactiveprofile"]["interface"])) {
+               if (!Session::getCurrentInterface()) {
                   $auth->auth_succeded = false;
                   $auth->addToError(__("You don't have right to connect"));
                }
@@ -633,8 +638,7 @@ class Session {
 
       return (isset($_SESSION["glpicronuserrunning"])
               && (isCommandLine()
-                  || strpos($_SERVER['PHP_SELF'], 'cron.php')
-                  || strpos($_SERVER['PHP_SELF'], 'crontask.form.php')));
+                  || strpos($_SERVER['PHP_SELF'], '/cron.php')));
    }
 
 
@@ -701,8 +705,7 @@ class Session {
       global $CFG_GLPI;
 
       self::checkValidSessionId();
-      if (!isset($_SESSION["glpiactiveprofile"])
-          || ($_SESSION["glpiactiveprofile"]["interface"] != "central")) {
+      if (Session::getCurrentInterface() != "central") {
          // Gestion timeout session
          self::redirectIfNotLoggedIn();
          Html::displayRightError();
@@ -736,8 +739,7 @@ class Session {
       global $CFG_GLPI;
 
       self::checkValidSessionId();
-      if (!isset($_SESSION["glpiactiveprofile"])
-          || ($_SESSION["glpiactiveprofile"]["interface"] != "helpdesk")) {
+      if (Session::getCurrentInterface() != "helpdesk") {
          // Gestion timeout session
          self::redirectIfNotLoggedIn();
          Html::displayRightError();
@@ -1226,6 +1228,21 @@ class Session {
 
       return (isset($_SESSION['glpi_dropdowntranslations'][$itemtype])
               && isset($_SESSION['glpi_dropdowntranslations'][$itemtype][$field]));
+   }
+
+   /**
+    * Get current interface name extracted from session var (if exists)
+    *
+    * @since  9.2.2
+    *
+    * @return false or [helpdesk|central]
+    */
+   static function getCurrentInterface() {
+      if (isset($_SESSION['glpiactiveprofile']['interface'])) {
+         return $_SESSION['glpiactiveprofile']['interface'];
+      }
+
+      return false;
    }
 
 }
